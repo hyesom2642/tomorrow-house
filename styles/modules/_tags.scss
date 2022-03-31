@@ -1,0 +1,25 @@
+%tag-base {
+  // 공통 스타일
+  @include inline-flexbox;
+  @include text-style(12);
+  font-weight: 700;
+  height: 20px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.tag-red {
+  @extend %tag-base;
+  background-color: $red;
+  color: $white;
+}
+.tag-gray {
+  @extend %tag-base;
+  background-color: $border;
+  color: $secondary;
+}
+.tag-green {
+  @extend %tag-base;
+  background-color: $green;
+  color: $white;
+}
