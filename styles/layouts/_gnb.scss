@@ -2,11 +2,12 @@
   position: relative;
   border-bottom: 1px solid $border;
   .logo {
+    @include position-center;
+
     a {
       display: block;
     }
     img {
-      @include position-center;
       display: block;
       width: auto;
       height: 20px;
@@ -36,5 +37,64 @@
   &-wrapper {
     @include flexbox(between);
     height: 50px;
+  }
+
+  /* ===== Tablet ===== */
+  @include responsive(T) {
+    .gnb-wrapper {
+      height: 80px;
+    }
+    .logo {
+      position: static;
+      transform: none;
+      margin-right: 32px;
+
+      img {
+        height: 24px;
+      }
+    }
+    .gnb-left {
+      @include flexbox(start);
+    }
+    .gnb-right {
+      @include flexbox(end);
+
+      .gnb-button-group {
+        margin-right: 24px;
+        .gnb-icon-button {
+          margin-right: 8px;
+        }
+        .gnb-icon-button,
+        .gnb-avatar-button {
+          width: 32px;
+          height: 32px;
+        }
+        i {
+          font-size: 24px;
+        }
+      }
+    }
+    .btn-fill-primary {
+      width: 88px;
+      height: 40px;
+      i {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  /* ===== Desktop ===== */
+  @include responsive(D) {
+    .gnb-right {
+      .input-group {
+        margin-right: 24px;
+        width: 264px;
+        height: 40px;
+
+        i {
+          font-size: 20px;
+        }
+      }
+    }
   }
 }
