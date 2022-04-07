@@ -65,3 +65,27 @@
   </div>
 </div>
 ```
+
+### 2. Sidebar
+
+- NOTE : 로그인을 한 경우
+
+```html
+<div class="sidebar-user">
+  <a href="#">
+    <div class="avatar-24">
+      <img src="./assets/images/user-01.jpg" alt="유저프로필" />
+    </div>
+    <strong class="username">춘식이</strong>
+  </a>
+</div>
+```
+
+- NOTE : 로그인을 하지 않은 경우
+
+```html
+<div class="sidebar-auth">
+  <a href="#" class="btn-40 btn-outlined">로그인</a>
+  <a href="#" class="btn-40 btn-fill-primary">회원가입</a>
+</div>
+```
