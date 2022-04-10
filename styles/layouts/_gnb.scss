@@ -91,14 +91,35 @@
 
   /* ===== Desktop ===== */
   @include responsive(D) {
-    .gnb-right {
-      .input-group {
-        margin-right: 24px;
-        width: 264px;
-        height: 40px;
+    .gnb-search {
+      position: relative;
+      width: 264px;
+      margin-right: 24px;
 
+      .input-group {
+        width: 100%;
         i {
           font-size: 20px;
+        }
+      }
+
+      .search-history {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        width: 100%;
+        padding: 16px 8px 8px;
+        background-color: $white;
+        border: 1px solid $border;
+        border-radius: 4px;
+        box-shadow: $dropdown-shadow;
+
+        &.is-active {
+          display: block;
+        }
+        &-header {
+          padding: 0 8px;
         }
       }
     }

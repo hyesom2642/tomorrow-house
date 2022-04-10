@@ -59,13 +59,63 @@
               </div>
 
               <div class="gnb-right">
-                <div class="input-group lg-only">
-                  <i class="ic-search gnb-icon-button" aria-hidden></i>
-                  <input
-                    class="form-input"
-                    type="text"
-                    placeholder="스토어 검색"
-                  />
+                <div class="gnb-search">
+                  <div class="input-group lg-only">
+                    <i class="ic-search gnb-icon-button" aria-hidden></i>
+                    <input
+                      class="form-input"
+                      type="text"
+                      placeholder="스토어 검색"
+                    />
+                  </div>
+                  <section class="search-history">
+                    <header class="search-history-header">
+                      <h2 class="search-history-title">최근검색어</h2>
+                      <button type="button">전체 삭제</button>
+                    </header>
+
+                    <!-- NOTE: 최근검색어가 존재할 경우 -->
+                    <div class="search-history-content">
+                      <ol class="search-history-list">
+                        <li class="search-history-item">
+                          <button type="button" class="search-word">
+                            가구
+                          </button>
+                          <button
+                            type="button"
+                            aira-label="검색어삭제"
+                            class="search-delete"
+                          >
+                            <i class="ic-close"></i>
+                          </button>
+                        </li>
+                        <li class="search-history-item">
+                          <button type="button" class="search-word">
+                            무드등
+                          </button>
+                          <button
+                            type="button"
+                            aira-label="검색어삭제"
+                            class="search-delete"
+                          >
+                            <i class="ic-close"></i>
+                          </button>
+                        </li>
+                        <li class="search-history-item">
+                          <button type="button" class="search-word">
+                            노트북
+                          </button>
+                          <button
+                            type="button"
+                            aira-label="검색어삭제"
+                            class="search-delete"
+                          >
+                            <i class="ic-close"></i>
+                          </button>
+                        </li>
+                      </ol>
+                    </div>
+                  </section>
                 </div>
 
                 <!-- NOTE : 로그인을 한 경우 -->
@@ -106,7 +156,7 @@
 
                   <div class="my-menu sm-hidden">
                     <button
-                      class="my-menu-button is-active gnb-avatar-button sm-hidden"
+                      class="my-menu-button gnb-avatar-button sm-hidden"
                       type="button"
                       aria-label="마이페이지 열기 버튼"
                     >
