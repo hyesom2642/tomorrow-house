@@ -1,5 +1,6 @@
 .navbar-menu {
   $navbar-menu-item-height: 36px;
+  $navbar-menu-list-padding: 20px;
   $community-menu-item-length: 8;
   $store-menu-item-length: 9;
   $interior-menu-item-length: 2;
@@ -11,19 +12,22 @@
   }
 
   &.is-open {
-    &.is-community {
+    .is-community {
       .navbar-menu-content {
-        max-height: $navbar-menu-item-height * $community-menu-item-length + 8px;
+        max-height: $navbar-menu-item-height * $community-menu-item-length +
+          $navbar-menu-list-padding;
       }
     }
-    &.is-store {
+    .is-store {
       .navbar-menu-content {
-        max-height: $navbar-menu-item-height * $store-menu-item-length + 8px;
+        max-height: $navbar-menu-item-height * $store-menu-item-length +
+          $navbar-menu-list-padding;
       }
     }
-    &.is-interior {
+    .is-interior {
       .navbar-menu-content {
-        max-height: $navbar-menu-item-height * $interior-menu-item-length + 8px;
+        max-height: $navbar-menu-item-height * $interior-menu-item-length +
+          $navbar-menu-list-padding;
       }
     }
 
@@ -66,7 +70,7 @@
     transition: max-height 200ms ease-in-out;
 
     .navbar-menu-list {
-      margin-bottom: 8px;
+      padding-bottom: $navbar-menu-list-padding;
     }
   }
 
