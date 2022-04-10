@@ -324,6 +324,77 @@
       </nav>
     </aside>
 
+    <aside class="search-modal lg-hidden">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <header class="search-modal-header">
+              <h1 class="visually-hidden">검색창</h1>
+              <div>
+                <div class="input-group search-modal-form">
+                  <i class="ic-search gnb-icon-button" aria-hidden></i>
+                  <input
+                    class="form-input"
+                    type="text"
+                    placeholder="스토어 검색"
+                  />
+                </div>
+                <button type="button" class="btn-ghost btn-40">취소</button>
+              </div>
+            </header>
+
+            <section class="search-history">
+              <header class="search-history-header">
+                <h2 class="search-history-title">최근검색어</h2>
+                <button type="button">전체 삭제</button>
+              </header>
+
+              <!-- NOTE: 최근검색어가 존재할 경우 -->
+              <div class="search-history-content">
+                <ol class="search-history-list">
+                  <li class="search-history-item">
+                    <button type="button" class="search-word">가구</button>
+                    <button
+                      type="button"
+                      aira-label="검색어삭제"
+                      class="search-delete"
+                    >
+                      <i class="ic-close"></i>
+                    </button>
+                  </li>
+                  <li class="search-history-item">
+                    <button type="button" class="search-word">무드등</button>
+                    <button
+                      type="button"
+                      aira-label="검색어삭제"
+                      class="search-delete"
+                    >
+                      <i class="ic-close"></i>
+                    </button>
+                  </li>
+                  <li class="search-history-item">
+                    <button type="button" class="search-word">노트북</button>
+                    <button
+                      type="button"
+                      aira-label="검색어삭제"
+                      class="search-delete"
+                    >
+                      <i class="ic-close"></i>
+                    </button>
+                  </li>
+                </ol>
+              </div>
+
+              <!-- NOTE: 최근검색어가 존재하지 않을 경우 -->
+              <div class="search-history-content">
+                <p class="search-empty">최근 검색한 내역이 없습니다.</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </aside>
+
     <div class="overlay" aria-hidden></div>
   </body>
 </html>
