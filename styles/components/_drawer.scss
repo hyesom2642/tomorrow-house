@@ -1,0 +1,92 @@
+.navbar-menu {
+  $navbar-menu-item-height: 36px;
+  $community-menu-item-length: 8;
+  $store-menu-item-length: 9;
+  $interior-menu-item-length: 2;
+
+  &.is-active {
+    .navbar-menu-button {
+      color: $blue;
+    }
+  }
+
+  &.is-open {
+    &.is-community {
+      .navbar-menu-content {
+        max-height: $navbar-menu-item-height * $community-menu-item-length + 8px;
+      }
+    }
+    &.is-store {
+      .navbar-menu-content {
+        max-height: $navbar-menu-item-height * $store-menu-item-length + 8px;
+      }
+    }
+    &.is-interior {
+      .navbar-menu-content {
+        max-height: $navbar-menu-item-height * $interior-menu-item-length + 8px;
+      }
+    }
+
+    .navbar-menu-button i:last-child {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    .navbar-menu-content {
+      max-height: 332px;
+    }
+  }
+
+  &-button {
+    @include flexbox(start);
+    @include text-style(18, $primary);
+    width: 100%;
+    height: 54px;
+    position: relative;
+    font-weight: 700;
+    transition: color 200ms ease-in-out;
+
+    i:first-child {
+      position: relative;
+      top: 2px;
+      margin-right: 8px;
+      font-size: 24px;
+      color: $primary;
+    }
+    i:last-child {
+      @include position-center-y;
+      right: 8px;
+      font-size: 16px;
+      transition: transform 200ms ease-in-out;
+    }
+  }
+
+  &-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 200ms ease-in-out;
+
+    .navbar-menu-list {
+      margin-bottom: 8px;
+    }
+  }
+
+  &-item {
+    &.is-active {
+      a {
+        color: $blue;
+      }
+    }
+    a {
+      @include flexbox(start);
+      @include text-style(14, $primary);
+      font-weight: 700;
+      width: 100%;
+      height: $navbar-menu-item-height;
+      padding: 0 12px;
+      .ic-new {
+        font-size: 16px;
+        color: $red;
+      }
+    }
+  }
+}

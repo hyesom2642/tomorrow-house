@@ -199,22 +199,50 @@
       <nav class="sidebar-nav">
         <h2 class="visually-hidden">메뉴</h2>
 
-        <div class="navbar-menu">
-          <div class="navbar-menu-community">
-            <button class="navbar-menu-button">
-              <i class="ic-community" aria-hidden></i>
-              커뮤니티
-              <i class="ic-chevron" aria-hidden></i>
-            </button>
+        <div class="navbar-menu is-community is-open">
+          <!-- <div class="navbar-menu-community"> -->
+          <button class="navbar-menu-button">
+            <i class="ic-community" aria-hidden></i>
+            커뮤니티
+            <i class="ic-chevron" aria-hidden></i>
+          </button>
+          <div class="navbar-menu-content">
+            <ul class="navbar-menu-list community-list">
+              <li class="navbar-menu-item community-item">
+                <a href="#">홈</a>
+              </li>
+              <li class="navbar-menu-item community-item">
+                <a href="#">사진</a>
+              </li>
+              <li class="navbar-menu-item community-item">
+                <a href="#">집들이</a>
+              </li>
+              <li class="navbar-menu-item community-item">
+                <a href="#">노하우</a>
+              </li>
+              <li class="navbar-menu-item community-item">
+                <a href="#">전문가집들이</a>
+              </li>
+              <li class="navbar-menu-item community-item">
+                <a href="#">셀프가이드</a>
+              </li>
+              <li class="navbar-menu-item community-item">
+                <a href="#">질문과답변</a>
+              </li>
+              <li class="navbar-menu-item community-item">
+                <a href="#">이벤트</a>
+              </li>
+            </ul>
+            <!-- </div> -->
           </div>
 
-          <div class="navbar-menu-store">
+          <div class="navbar-menu is-store is-active is-open">
+            <!-- <div class="navbar-menu-store "> -->
             <button class="navbar-menu-button" type="button">
               <i class="ic-store" aria-hidden></i>
               스토어
               <i class="ic-chevron" aria-hidden></i>
             </button>
-
             <div class="navbar-menu-content">
               <ul class="navbar-menu-list store-list">
                 <li class="navbar-menu-item store-item">
@@ -241,22 +269,35 @@
                 <li class="navbar-menu-item store-item">
                   <a href="#">리퍼마켓</a>
                 </li>
-                <li class="navbar-menu-item store-item">
+                <li class="navbar-menu-item store-item is-active">
                   <a href="#">
                     기획전
                     <i class="ic-new" aria-label="새로운 기획전"></i>
                   </a>
                 </li>
               </ul>
+              <!-- </div> -->
             </div>
           </div>
 
-          <div>
-            <button class="navbar-menu-interior">
+          <div class="navbar-menu is-interior">
+            <!-- <div class="navbar-menu-interior"> -->
+            <button class="navbar-menu-button">
               <i class="ic-expert" aria-hidden></i>
               인테리어시공
               <i class="ic-chevron" aria-hidden></i>
             </button>
+            <div class="navbar-menu-content">
+              <ul class="navbar-menu-list interior-list">
+                <li class="navbar-menu-item interior-item">
+                  <a href="#">시공홈</a>
+                </li>
+                <li class="navbar-menu-item interior-item">
+                  <a href="#">시공스토어</a>
+                </li>
+              </ul>
+              <!-- </div> -->
+            </div>
           </div>
         </div>
 
