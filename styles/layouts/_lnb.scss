@@ -1,5 +1,7 @@
 .lnb {
   $lnb-link-padding: 8px;
+  $lnb-height-sm: 40px;
+  $lnb-height-md: 50px;
 
   overflow-x: auto;
 
@@ -13,7 +15,7 @@
     // width: max-content;
     margin-left: -15px;
     padding: 0 7px;
-    height: 40px;
+    height: $lnb-height-sm;
     border-bottom: 1px solid $border;
   }
   &-item {
@@ -29,7 +31,7 @@
       @include inline-flexbox;
       @include text-style(13, $primary-dark);
       font-weight: 700;
-      height: 40px;
+      height: $lnb-height-sm;
       padding: 0 $lnb-link-padding;
       border-bottom: 2px solid transparent;
       transition: color 200ms ease-in-out;
@@ -47,9 +49,23 @@
       }
     }
   }
-}
+  /* ===== Teblet ===== */
+  @include responsive(T) {
+    height: $lnb-height-md;
+    border-bottom: 1px solid $border;
+    overflow-x: visible;
 
-/* ===== Desktop ===== */
-@include responsive(D) {
+    &-list {
+      padding: 0;
+      margin-left: 0;
+      border-bottom: 0;
+      height: auto;
+    }
+    &-item {
+      a {
+        @include text-style(14);
+        height: $lnb-height-md;
+      }
+    }
+  }
 }
-// }
