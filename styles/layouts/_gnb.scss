@@ -3,6 +3,8 @@
 
   position: relative;
   border-bottom: 1px solid $border;
+  background-color: $white;
+
   .logo {
     @include position-center;
 
@@ -28,13 +30,13 @@
 
   &-wrapper {
     @include flexbox(between);
-    height: 50px;
+    height: $gnb-height-sm - 1px;
   }
 
   /* ===== Tablet ===== */
   @include responsive(T) {
-    .gnb-wrapper {
-      height: 80px;
+    &-wrapper {
+      height: $gnb-height-md - 1px;
     }
     .logo {
       position: static;
@@ -88,7 +90,6 @@
       }
     }
   }
-
   /* ===== Desktop ===== */
   @include responsive(D) {
     .gnb-search {
