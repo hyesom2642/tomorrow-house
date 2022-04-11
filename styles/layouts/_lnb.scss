@@ -1,5 +1,6 @@
 .lnb {
-  border-bottom: 1px solid $border;
+  $lnb-link-padding: 8px;
+
   overflow-x: auto;
 
   &::-webkit-scrollbar {
@@ -10,15 +11,17 @@
     @include inline-flexbox(start);
     white-space: nowrap;
     // width: max-content;
-    position: relative;
-    left: -8px;
+    margin-left: -15px;
+    padding: 0 7px;
+    height: 40px;
+    border-bottom: 1px solid $border;
   }
   &-item {
     // flex-shrink: 0;
     &.is-active {
       a {
         color: $blue;
-        border-bottom: 2px solid $blue;
+        border-bottom-color: $blue;
       }
     }
 
@@ -27,7 +30,8 @@
       @include text-style(13, $primary-dark);
       font-weight: 700;
       height: 40px;
-      padding: 0 8px;
+      padding: 0 $lnb-link-padding;
+      border-bottom: 2px solid transparent;
       transition: color 200ms ease-in-out;
 
       &:hover {
@@ -44,39 +48,6 @@
     }
   }
 }
-
-// .lnb {
-//   border-bottom: 1px solid $border;
-//   &-nav {
-//     height: 50px;
-
-//     &-list {
-//       @include flexbox(start);
-//     }
-//     &-item {
-//       padding: 13px 8px;
-//       &:active {
-//         border-bottom: 2px solid $blue;
-//       }
-
-//       a {
-//         @include text-style(14, $primary-dark);
-//         font-weight: 700;
-//         &:hover {
-//           color: $blue;
-//         }
-//       }
-
-//       &:last-child {
-//         i {
-//           position: relative;
-//           top: 2px;
-//           font-size: 16px;
-//           color: red;
-//         }
-//       }
-//     }
-//   }
 
 /* ===== Desktop ===== */
 @include responsive(D) {
