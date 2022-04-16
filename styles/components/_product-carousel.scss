@@ -45,4 +45,80 @@
       }
     }
   }
+
+  @include responsive(T) {
+    padding-right: 30px;
+
+    &-slider {
+      margin: 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    &-thumbnail {
+      position: static;
+      transform: none;
+      margin-top: 8px;
+
+      .thumbnail {
+        &-list {
+          @include flexbox(start);
+        }
+        &-item {
+          box-shadow: none;
+          margin: 0 8px;
+          &:first-child {
+            margin-left: 0;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &.tns-nav-active {
+            button {
+              transform: none;
+            }
+          }
+          button {
+            width: 56px;
+            height: 56px;
+            border-radius: 4px;
+            overflow: hidden;
+            opacity: 1;
+          }
+          img {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  @include responsive(D) {
+    @include flexbox(end, start);
+    flex-direction: row-reverse;
+
+    &-slider {
+      width: 500px;
+      height: 500px;
+    }
+
+    &-thumbnail {
+      margin-top: 0;
+      margin-right: 8px;
+
+      .thumbnail-list {
+        flex-direction: column;
+      }
+      .thumbnail-item {
+        margin-right: 0;
+        margin-bottom: 8px;
+        margin-left: 0;
+
+        button,
+        img {
+          width: 75px;
+          height: 75px;
+        }
+      }
+    }
+  }
 }
