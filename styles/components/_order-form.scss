@@ -1,0 +1,33 @@
+.product-info-order {
+  margin-bottom: 40px;
+
+  &-select {
+    .select-group:first-child {
+      margin-bottom: 8px;
+    }
+  }
+
+  .order-summary {
+    @include flexbox(between);
+    padding: 20px 0;
+  }
+  .order-button-group {
+    @include flexbox();
+    button {
+      width: 50%;
+      &:first-child {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .order-checkout {
+    .checkout-item {
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
