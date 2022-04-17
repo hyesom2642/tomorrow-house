@@ -510,8 +510,8 @@
                       <div class="checkout-card">
                         <header class="checkout-header">
                           <h4 class="checkout-title">
-                            추가상품 - 맛있는 제주 감귤을 직배송 / 제주도 귤 판매
-                            1위 믿고 구매하세요.
+                            추가상품 - 맛있는 제주 감귤을 직배송 / 제주도 귤
+                            판매 1위 믿고 구매하세요.
                           </h4>
                           <button
                             class="delete-button"
@@ -521,27 +521,26 @@
                             <i class="ic-close" aria-hidden></i>
                           </button>
                         </header>
-                      </div>
-
-                      <footer class="checkout-footer">
-                        <div class="checkout-select">
-                          <select id="checkout-item-1">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                          </select>
-                          <i class="ic-caret" aria-hidden></i>
-                        </div>
-
-                        <output class="checkout-output" for="checkout-item-1">
-                          <div class="price-16">
-                            <strong class="amount">32,900</strong>
-                            <span class="currency">원</span>
+                        <footer class="checkout-footer">
+                          <div class="checkout-select">
+                            <select id="checkout-item-1">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                            </select>
+                            <i class="ic-caret" aria-hidden></i>
                           </div>
-                        </output>
-                      </fo>
+
+                          <output class="checkout-output" for="checkout-item-1">
+                            <div class="price-16">
+                              <strong class="amount">32,900</strong>
+                              <span class="currency">원</span>
+                            </div>
+                          </output>
+                        </footer>
+                      </div>
                     </li>
                   </ul>
                 </div>
@@ -570,32 +569,54 @@
             </section>
           </div>
         </div>
+      </div>
 
-        <!-- <div class="row">
-          <div class="col-sm-4">
-            <section class="tab-menu">
+      <div class="product-tab">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4 col-lg-8">
               <ul class="tab-menu-list">
-                <li class="tab-menu-item is-active">
-                  <a href="#">상품정보</a>
+                <li
+                  role="tab"
+                  aria-labelledby="product-spec"
+                  class="tab-menu-item is-active"
+                >
+                  <button type="button">상품정보</button>
                 </li>
-                <li class="tab-menu-item">
-                  <a href="#">리뷰</a>
-                  <span>566</span>
+                <li
+                  role="tab"
+                  aria-labelledby="product-review"
+                  class="tab-menu-item"
+                >
+                  <button type="button">리뷰</button>
+                  <strong>566</strong>
                 </li>
-                <li class="tab-menu-item">
-                  <a href="#">문의</a>
-                  <span>96</span>
+                <li
+                  role="tab"
+                  aria-labelledby="product-inquiry"
+                  class="tab-menu-item"
+                >
+                  <button type="button">문의</button>
+                  <strong>96</strong>
                 </li>
-                <li class="tab-menu-item">
-                  <a href="#">배송/환불</a>
+                <li
+                  role="tab"
+                  aria-labelledby="product-shipment"
+                  class="tab-menu-item"
+                >
+                  <button type="button">배송/환불</button>
                 </li>
-                <li class="tab-menu-item">
-                  <a href="#">추천</a>
+                <li
+                  role="tab"
+                  aria-labelledby="product-recommendation"
+                  class="tab-menu-item"
+                >
+                  <button type="button">추천</button>
                 </li>
               </ul>
-            </section>
+            </div>
           </div>
-        </div> -->
+        </div>
       </div>
     </main>
 
