@@ -1,0 +1,128 @@
+.review-scoreboard {
+  @include flexbox;
+  width: 100%;
+  height: 152px;
+  background-color: $background;
+  border-radius: 4px;
+
+  .score-detail,
+  .score-summary {
+    width: 50%;
+  }
+
+  &::before {
+    order: 2;
+    content: '';
+    width: 1px;
+    height: 96px;
+    background-color: $border;
+  }
+  .score-summary {
+    order: 1;
+    @include flexbox;
+    flex-direction: column;
+
+    .average-score {
+      display: block;
+      @include text-style(24, $primary-dark);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .star-rating {
+      @include star-rating(20px);
+    }
+  }
+  .score-detail {
+    order: 3;
+    text-align: center;
+  }
+  .score-stats {
+    &-list {
+      display: inline-block;
+    }
+    &-item {
+      @include flexbox(start);
+      @include text-style(12, $secondary);
+      font-weight: 400;
+      margin-bottom: 4px;
+
+      &.is-active {
+        dt,
+        .count {
+          color: $blue;
+          font-weight: 700;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+      dt {
+        margin-right: 4px;
+      }
+      dd {
+        @include flexbox;
+
+        .bar-graph {
+          width: 70px;
+          height: 5px;
+          background-color: $border;
+          border-radius: 10px;
+          margin-right: 4px;
+          overflow: hidden;
+
+          .active-bar {
+            width: 50%;
+            height: 5px;
+            background-color: $blue;
+            border-radius: 10px;
+          }
+        }
+        .count {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  @include responsive(T) {
+    height: 148px;
+    padding: 0 72px;
+
+    .score-detail,
+    .score-summary {
+      width: auto;
+    }
+
+    &::before {
+      height: 72px;
+      margin: 0 69px;
+    }
+    .score-summary {
+      flex-direction: row-reverse;
+
+      .average-score {
+        margin-bottom: 0;
+      }
+      .star-rating {
+        @include star-rating(24px);
+        margin-right: 16px;
+      }
+    }
+    .score-stats {
+      &-item {
+        dt {
+          margin-right: 8px;
+        }
+        dd {
+          .bar-graph {
+            width: 180px;
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+  }
+  @include responsive(D) {
+  }
+}
