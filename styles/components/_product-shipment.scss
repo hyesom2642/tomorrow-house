@@ -1,0 +1,25 @@
+.product-shipment {
+  @include mobile-only {
+    &.is-open {
+      .product-section {
+        display: block;
+
+        &-divider:last-child {
+          display: block;
+        }
+      }
+
+      > .product-section-header {
+        display: none;
+      }
+    }
+
+    .product-section {
+      display: none;
+
+      &-divider:last-child {
+        display: none;
+      }
+    }
+  }
+}
