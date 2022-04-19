@@ -72,10 +72,12 @@
           overflow: hidden;
 
           .active-bar {
-            width: 50%;
+            width: 0;
             height: 5px;
             background-color: $blue;
             border-radius: 10px;
+            animation-name: slide-active-bar;
+            animation-duration: 1000ms;
           }
         }
         .count {
@@ -124,5 +126,14 @@
     }
   }
   @include responsive(D) {
+  }
+}
+
+@keyframes slide-active-bar {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
   }
 }
