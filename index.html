@@ -814,21 +814,18 @@
                 </div>
 
                 <ol class="review-list">
+                  <!-- NOTE : 유저프로필이 없는 경우 -->
                   <li class="review-item">
                     <article class="review-card">
                       <header class="review-card-header">
                         <h3 class="visually-hidden">
                           유저이름1 님이 작성하신 리뷰
                         </h3>
-                        <a class="avatar-24">
-                          <img
-                            src="./assets/images/img-user-default.png"
-                            alt="user-default"
-                          />
+                        <a class="avatar-24" aria-label="유저이름1님의 프로필">
                         </a>
                         <div class="review-info">
                           <strong class="review-username">
-                            <a href="#">유저이름1 </a>
+                            <a href="#">유저이름1</a>
                           </strong>
                           <div class="detail">
                             <div
@@ -864,6 +861,230 @@
                           <strong><span>7</span>명</strong>에게 도움이
                           되었습니다.
                         </p>
+                      </footer>
+                    </article>
+                  </li>
+                  <!-- NOTE : 유저프로필이 있는 경우 -->
+                  <li class="review-item">
+                    <article class="review-card">
+                      <header class="review-card-header">
+                        <h3 class="visually-hidden">
+                          유저이름2 님이 작성하신 리뷰
+                        </h3>
+                        <a class="avatar-24">
+                          <img
+                            src="./assets/images/user-01.jpg"
+                            alt="user-default"
+                          />
+                        </a>
+                        <div class="review-info">
+                          <strong class="review-username">
+                            <a href="#">유저이름2</a>
+                          </strong>
+                          <div class="detail">
+                            <div
+                              class="star-rating-13"
+                              aria-labe="5.0점 / 5.0점"
+                            >
+                              <i class="ic-star is-active"></i>
+                              <i class="ic-star is-active"></i>
+                              <i class="ic-star is-active"></i>
+                              <i class="ic-star is-active"></i>
+                              <i class="ic-star is-active"></i>
+                            </div>
+                            <div class="etc">
+                              <time datetime="2021-01-01">2021.01.01</time>
+                              <span>오늘의집 구매</span>
+                            </div>
+                          </div>
+                        </div>
+                      </header>
+                      <div class="review-card-body">
+                        <p>
+                          작업실에서 손이 시려워서 책상 위에 올려서 쓸걸로
+                          골랐습니다! 아주아주 뜨듯하고 크기도 적당하고 민트
+                          사고싶엇지만 품절 ㅠㅠ
+                        </p>
+                      </div>
+                      <footer class="review-card-footer">
+                        <button type="button" class="btn-outlined btn-32">
+                          도움이 돼요
+                        </button>
+
+                        <p>
+                          <strong><span>7</span>명</strong>에게 도움이
+                          되었습니다.
+                        </p>
+                      </footer>
+                    </article>
+                  </li>
+                  <!-- NOTE : 리뷰이미지가 있는 경우 -->
+                  <li class="review-item">
+                    <article class="review-card">
+                      <header class="review-card-header">
+                        <h3 class="visually-hidden">
+                          유저이름3 님이 작성하신 리뷰
+                        </h3>
+                        <a class="avatar-24">
+                          <img
+                            src="./assets/images/user-02.png"
+                            alt="user-02"
+                          />
+                        </a>
+                        <div class="review-info">
+                          <strong class="review-username">
+                            <a href="#">유저이름3</a>
+                          </strong>
+                          <div class="detail">
+                            <div
+                              class="star-rating-13"
+                              aria-labe="5.0점 / 5.0점"
+                            >
+                              <i class="ic-star is-active"></i>
+                              <i class="ic-star is-active"></i>
+                              <i class="ic-star is-active"></i>
+                              <i class="ic-star is-active"></i>
+                              <i class="ic-star is-active"></i>
+                            </div>
+                            <div class="etc">
+                              <time datetime="2021-01-01">2021.01.01</time>
+                              <span>오늘의집 구매</span>
+                            </div>
+                          </div>
+                        </div>
+                      </header>
+                      <div class="review-card-body">
+                        <div class="review-image">
+                          <img
+                            src="./assets/images/img-review-01.jpg"
+                            alt="유저이름3님의 리뷰 사진"
+                          />
+                        </div>
+                        <p>
+                          온도 조절과 타이머가 안 된다는 걸 뒤늦게 알았지만
+                          이쁘니까 대만족! 가격도 대만족!
+                        </p>
+                      </div>
+                      <footer class="review-card-footer">
+                        <button type="button" class="btn-fill-primary btn-32">
+                          <i class="ic-check"></i>
+                          도움됨
+                        </button>
+
+                        <p>
+                          <strong><span>3</span>명</strong>에게 도움이
+                          되었습니다.
+                        </p>
+                      </footer>
+                    </article>
+                  </li>
+                  <!-- NOTE : 사용자가 도움됨을 체크한 경우 -->
+                  <li class="review-item">
+                    <article class="review-card">
+                      <header class="review-card-header">
+                        <h3 class="visually-hidden">
+                          유저이름4 님이 작성하신 리뷰
+                        </h3>
+                        <a class="avatar-24">
+                          <img
+                            src="./assets/images/user-03.jpg"
+                            alt="user-03"
+                          />
+                        </a>
+                        <div class="review-info">
+                          <strong class="review-username">
+                            <a href="#">유저이름4</a>
+                          </strong>
+                          <div class="detail">
+                            <div
+                              class="star-rating-13"
+                              aria-labe="3.0점 / 5.0점"
+                            >
+                              <i class="ic-star is-active"></i>
+                              <i class="ic-star is-active"></i>
+                              <i class="ic-star is-active"></i>
+                              <i class="ic-star"></i>
+                              <i class="ic-star"></i>
+                            </div>
+                            <div class="etc">
+                              <time datetime="2021-01-01">2021.01.01</time>
+                              <span>오늘의집 구매</span>
+                            </div>
+                          </div>
+                        </div>
+                      </header>
+                      <div class="review-card-body">
+                        <div class="review-image">
+                          <img
+                            src="./assets/images/img-review-02.jpg"
+                            alt="유저이름4님의 리뷰 사진"
+                          />
+                        </div>
+                        <p>가격 대비 만족합니다.</p>
+                      </div>
+                      <footer class="review-card-footer">
+                        <button type="button" class="btn-fill-primary btn-32">
+                          <i class="ic-check"></i>
+                          도움됨
+                        </button>
+
+                        <p>
+                          <strong><span>5</span>명</strong>에게 도움이
+                          되었습니다.
+                        </p>
+                      </footer>
+                    </article>
+                  </li>
+                  <!-- NOTE : 사용자가 도움됨을 미체크, 도움되지않았을경우 -->
+                  <li class="review-item">
+                    <article class="review-card">
+                      <header class="review-card-header">
+                        <h3 class="visually-hidden">
+                          유저이름5 님이 작성하신 리뷰
+                        </h3>
+                        <a
+                          class="avatar-24"
+                          aria-label="유저이름5님의 리뷰"
+                        ></a>
+                        <div class="review-info">
+                          <strong class="review-username">
+                            <a href="#">유저이름5</a>
+                          </strong>
+                          <div class="detail">
+                            <div
+                              class="star-rating-13"
+                              aria-labe="4.0점 / 5.0점"
+                            >
+                              <i class="ic-star is-active"></i>
+                              <i class="ic-star is-active"></i>
+                              <i class="ic-star is-active"></i>
+                              <i class="ic-star is-active"></i>
+                              <i class="ic-star"></i>
+                            </div>
+                            <div class="etc">
+                              <time datetime="2021-01-01">2021.01.01</time>
+                              <span>오늘의집 구매</span>
+                            </div>
+                          </div>
+                        </div>
+                      </header>
+                      <div class="review-card-body">
+                        <div class="review-image">
+                          <img
+                            src="./assets/images/img-review-03.jpg"
+                            alt="유저이름5님의 리뷰 사진"
+                          />
+                        </div>
+                        <p>
+                          집 전체를 데운다기보다는 틀어놓고 앞에 앉아있으면
+                          따땃해지는 정도예요. 불 꺼놓고 난로 켜고 담요 덮은
+                          채로 커피 마시면 아주 좋아요. 고양이도 좋아해요
+                        </p>
+                      </div>
+                      <footer class="review-card-footer">
+                        <button type="button" class="btn-outlined btn-32">
+                          도움됨
+                        </button>
                       </footer>
                     </article>
                   </li>
