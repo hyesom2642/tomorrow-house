@@ -19,4 +19,19 @@
       display: none;
     }
   }
+
+  .inquiry-empty {
+    padding: 48px 0;
+
+    p {
+      @include text-style(16, $secondary);
+      font-weight: 400;
+    }
+  }
+
+  @include responsive(T) {
+    .inquiry-empty {
+      padding: 28px 0;
+    }
+  }
 }
