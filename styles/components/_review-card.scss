@@ -129,3 +129,21 @@
     }
   }
 }
+
+.product-section-content {
+  padding: 36px 0;
+  .review-empty {
+    @include text-style(16, $secondary);
+    font-weight: 400;
+    text-align: center;
+
+    strong {
+      color: $blue;
+      font-weight: 700;
+    }
+  }
+
+  @include responsive(T) {
+    padding: 16px 0;
+  }
+}
