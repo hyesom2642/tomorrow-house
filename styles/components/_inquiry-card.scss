@@ -44,6 +44,7 @@
     .question-content {
       @include text-style(13);
       position: relative;
+      padding-left: 20px;
     }
     span {
       position: absolute;
@@ -53,9 +54,15 @@
       font-weight: 700;
     }
     p {
+      @include flexbox(start);
       color: $primary;
       font-weight: 400;
-      padding-left: 20px;
+
+      i {
+        font-size: 16px;
+        color: $tertiary;
+        margin-right: 8px;
+      }
     }
   }
 
