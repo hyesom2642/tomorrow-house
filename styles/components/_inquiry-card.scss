@@ -17,6 +17,9 @@
       dd {
         margin-bottom: 8px;
 
+        &.is-answered {
+          color: $blue;
+        }
         &::after {
           content: '|';
           margin: 0 4px;
@@ -41,10 +44,14 @@
   }
 
   &-body {
-    .question-content {
+    .inquiry-content {
       @include text-style(13);
       position: relative;
       padding-left: 20px;
+
+      &:first-child:not(:last-child) {
+        margin-bottom: 12px;
+      }
     }
     span {
       position: absolute;
@@ -64,6 +71,20 @@
         margin-right: 8px;
       }
     }
+    .seller {
+      margin-bottom: 4px;
+      @include flexbox(start);
+
+      strong {
+        font-weight: 700;
+        color: $primary-dark;
+        margin-right: 4px;
+      }
+      time {
+        @include text-style(12, $tertiary);
+        font-weight: 400;
+      }
+    }
   }
 
   @include responsive(T) {
@@ -71,11 +92,20 @@
       margin-bottom: 20px;
     }
     &-body {
-      .question-content {
+      .inquiry-content {
         @include text-style(16);
-      }
-      p {
         padding-left: 24px;
+
+        &:first-child:not(:last-child) {
+          margin-bottom: 16px;
+        }
+      }
+      .seller {
+        margin-bottom: 8px;
+
+        strong {
+          @include text-style(16);
+        }
       }
     }
   }
