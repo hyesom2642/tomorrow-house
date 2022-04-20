@@ -1,0 +1,44 @@
+.order-cta {
+  @include inline-flexbox;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: $order-cta-height;
+  background-color: $white;
+  padding: 4px;
+  z-index: $order-cta-level;
+
+  button.btn-ghost {
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 3px 20px;
+    width: 72px;
+    margin-right: 4px;
+    i {
+      @include flexbox;
+      width: 24px;
+      height: 24px;
+      font-size: 24px;
+    }
+    span {
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: -0.005em;
+      color: $secondary;
+    }
+
+    &.is-active {
+      i {
+        &.ic-bookmark-filled {
+          color: $blue;
+        }
+      }
+    }
+  }
+  button.btn-fill-primary {
+    flex-grow: 1;
+  }
+}
