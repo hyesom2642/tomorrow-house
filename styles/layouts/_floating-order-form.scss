@@ -1,8 +1,14 @@
 .floating-order-form {
+  $global-header-height: $gnb-height-md + $lnb-height-md +
+    $product-tab-height-md;
+
   @include flexbox(start, start);
   flex-direction: column;
   padding: 24px 0;
-  height: 700px; // 나중에 고침
+  position: sticky;
+  top: $global-header-height;
+  min-height: calc(100vh - #{$global-header-height + $global-footer-height-md});
+  max-height: calc(100vh - #{$global-header-height});
 
   &-select,
   .order-summary,
