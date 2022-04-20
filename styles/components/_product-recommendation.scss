@@ -6,9 +6,22 @@
   .recommendation-item {
     width: calc(50% - 10px); // width: (100% - 20px) / 2
 
+    a {
+      display: block;
+    }
+
     &:nth-child(1),
     &:nth-child(2) {
       margin-bottom: 20px;
+    }
+
+    &:active {
+      img {
+        transform: scale(1.1);
+      }
+      .recommendation-card-title {
+        opacity: 0.7;
+      }
     }
   }
 
@@ -18,6 +31,15 @@
 
       &:last-child {
         display: none;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+        .recommendation-card-title {
+          opacity: 0.7;
+        }
       }
     }
   }
