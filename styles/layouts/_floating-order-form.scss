@@ -1,0 +1,52 @@
+.floating-order-form {
+  @include flexbox(start, start);
+  flex-direction: column;
+  padding: 24px 0;
+  height: 700px; // 나중에 고침
+
+  &-select,
+  .order-summary,
+  .order-button-group {
+    width: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .order-checkout {
+    flex-grow: 1;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .order-button-group {
+    button.bookmark-button {
+      width: 55px;
+      height: 55px;
+      border-radius: 4px;
+      border: 1px solid $border;
+      flex-grow: 0;
+      flex-shrink: 0;
+      transition: background-color 300ms ease-in-out;
+
+      i {
+        font-size: 32px;
+        color: $primary;
+      }
+
+      &.is-active {
+        i {
+          color: $blue;
+        }
+      }
+
+      &:hover {
+        background-color: $background;
+      }
+    }
+    button.btn-outlined {
+      margin-right: 8px;
+    }
+  }
+}
