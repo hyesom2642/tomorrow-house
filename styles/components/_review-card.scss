@@ -141,8 +141,4 @@
       font-weight: 700;
     }
   }
-
-  @include responsive(T) {
-    padding: 16px 0;
-  }
 }
