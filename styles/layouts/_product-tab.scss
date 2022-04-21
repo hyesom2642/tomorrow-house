@@ -38,10 +38,10 @@
 
   @include responsive(T) {
     top: $gnb-height-md + $lnb-height-md;
-
     height: $product-tab-height-md;
     background-color: $background;
     border-bottom: 0;
+    margin: 40px 0;
 
     &-item {
       button {

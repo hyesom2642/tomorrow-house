@@ -1,6 +1,5 @@
 .product-spec {
   position: relative;
-  padding-top: 20px;
   height: 470px;
   overflow: hidden;
 
@@ -47,8 +46,6 @@
   }
 
   @include responsive(T) {
-    padding-top: 80px;
-
     &-header {
       h1 {
         @include text-style(18, $primary);
