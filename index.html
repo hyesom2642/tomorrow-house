@@ -626,6 +626,114 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-4 col-lg-8">
+            <section class="product-section product-user-gallery">
+              <header class="product-section-header">
+                <h1 class="title">섹션 타이틀</h1>
+                <strong class="badge" aria-label="0개">0</strong>
+                <button href="#" class="icon-link is-right" aira-labe="더보기">
+                  <i class="ic-chevron" aria-hidden></i>
+                </button>
+              </header>
+
+              <div class="product-section-content">
+                <div class="user-gallery-slider">
+                  <ol class="user-gallery-slider-list">
+                    <li class="user-gallery-slider-item">
+                      <div class="user-gallery-card">
+                        <figure class="user-gallery-card-image">
+                          <img src="./assets/images/img-review-01.jpg" alt="" />
+                          <figcaption class="visually-hidden">
+                            유저이름1님의 스타일링샷
+                          </figcaption>
+                        </figure>
+
+                        <div class="user-gallery-card-detail">
+                          <a class="avatar-32">
+                            <img
+                              src="./assets/images/user-01.jpg"
+                              alt="user-profile1"
+                            />
+                          </a>
+                          <a href="#" class="username">유저이름1 </a>
+                          <span class="order">1/461</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="user-gallery-slider-item">
+                      <div class="user-gallery-card">
+                        <figure class="user-gallery-card-image">
+                          <img src="./assets/images/img-review-02.jpg" alt="" />
+                          <figcaption class="visually-hidden">
+                            유저이름2님의 스타일링샷
+                          </figcaption>
+                        </figure>
+
+                        <div class="user-gallery-card-detail">
+                          <a class="avatar-32">
+                            <img
+                              src="./assets/images/user-02.png"
+                              alt="user-profile1"
+                            />
+                          </a>
+                          <a href="#" class="username">유저이름2 </a>
+                          <span class="order">2/461</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="user-gallery-slider-item">
+                      <div class="user-gallery-card">
+                        <figure class="user-gallery-card-image">
+                          <img src="./assets/images/img-review-03.jpg" alt="" />
+                          <figcaption class="visually-hidden">
+                            유저이름3님의 스타일링샷
+                          </figcaption>
+                        </figure>
+
+                        <div class="user-gallery-card-detail">
+                          <a class="avatar-32">
+                            <img
+                              src="./assets/images/user-03.jpg"
+                              alt="user-profile3"
+                            />
+                          </a>
+                          <a href="#" class="username">유저이름3 </a>
+                          <span class="order">3/461</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="user-gallery-slider-item">
+                      <div class="user-gallery-card">
+                        <figure class="user-gallery-card-image">
+                          <img src="./assets/images/img-review-04.jpg" alt="" />
+                          <figcaption class="visually-hidden">
+                            유저이름4님의 스타일링샷
+                          </figcaption>
+                        </figure>
+
+                        <div class="user-gallery-card-detail">
+                          <a class="avatar-32">
+                            <!-- <img
+                              src="./assets/images/user-.jpg"
+                              alt="user-profile4"
+                            /> -->
+                          </a>
+                          <a href="#" class="username">유저이름4</a>
+                          <span class="order">4/461</span>
+                        </div>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+                <div class="usergallery-thumbnail"></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-lg-8">
             <section
               class="product-section product-spec is-open"
               id="product-spec"
@@ -1639,13 +1747,13 @@
               </dl>
 
               <div class="order-button-group">
-                <button
+                <!-- <button
                   type="button"
                   class="bookmark-button btn-55"
                   aria-label="북마크에 추가"
                 >
                   <i class="ic-bookmark" aria-hidden></i>
-                </button>
+                </button> -->
                 <button
                   type="button"
                   class="bookmark-button is-active btn-55"
@@ -1653,7 +1761,7 @@
                 >
                   <i class="ic-bookmark-filled" aria-hidden></i>
                 </button>
-                <button type="button" class="btn-fill-secondary btn-55">
+                <button type="button" class="btn-outlined btn-55">
                   장바구니
                 </button>
                 <button type="submit" class="btn-fill-primary btn-55">
@@ -1956,7 +2064,6 @@
 
     <aside class="order-form-modal lg-hidden">
       <h1 class="visually-hidden">주문창</h1>
-
       <form action="#" method="POST" class="product-info-order">
         <div class="container">
           <div class="row">
@@ -2068,5 +2175,6 @@
     <script src="./js/sidebar-drawer.js"></script>
     <script src="./js/section-header.js"></script>
     <script src="./js/search-modal.js"></script>
+    <script src="./js/order-cta.js"></script>
   </body>
 </html>
