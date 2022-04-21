@@ -54,14 +54,4 @@
       padding: 0 8px;
     }
   }
-
-  // desktop
-  @include responsive(D) {
-    &-content {
-      width: 264px;
-      height: 272px;
-      border: 1px solid $border;
-      border-radius: 4px;
-    }
-  }
 }
