@@ -1,0 +1,11 @@
+.product-user-gallery {
+  .product-section-content {
+    margin: 0 -15px;
+  }
+
+  @include responsive(T) {
+    .product-section-content {
+      margin: 0;
+    }
+  }
+}
