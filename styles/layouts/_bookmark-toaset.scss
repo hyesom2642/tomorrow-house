@@ -1,4 +1,7 @@
 .bookmark-toaset {
+  &.is-active {
+    display: flex;
+  }
   @include flexbox(between);
   position: fixed;
   left: 0;
@@ -10,6 +13,7 @@
   box-shadow: $popup-shadow;
   padding-left: 36px;
   padding-right: 12px;
+  display: none;
 
   &-title {
     @include text-style(13, $primary);
@@ -24,6 +28,10 @@
     height: 36px;
     font-size: 20px;
     color: $tertiary;
+
+    &:active {
+      color: $secondary;
+    }
   }
 
   &-button-group {
@@ -35,6 +43,8 @@
   }
 
   @include responsive(T) {
+    @include position-center-x(fixed);
+    bottom: 40px;
     max-width: 480px;
     height: 80px;
     padding-left: 56px;
@@ -49,6 +59,10 @@
       width: 56px;
       height: 56px;
       font-size: 24px;
+
+      &:hover {
+        color: $secondary;
+      }
     }
     &-button-group {
       a {
