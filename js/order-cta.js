@@ -18,10 +18,30 @@ function closeOrderFormModal() {
 }
 orderFormModalOverlay.addEventListener('click', closeOrderFormModal)
 
-const fillBookMarkButton = bookMarkButton.nextElementSibling
-console.log(fillBookMarkButton)
+function toggleOrderCtaBookmark() {
+  // this -> bookMarkButton
+  // 1. 버튼 클릭시 .is-active toggle
+  // 2. icon 클래스가 ic-bookmark 에서 ic-bookmark-filled로 변경
+  // 3. 북마크수 span 가 +1
+  const [icon, countSpan] = this.children
+  const count = Number(countSpan.innerHTML.replaceAll(',', ''))
+  // console.log(count, typeof count)
+  let newCount = count
 
-bookMarkButton.addEventListener('click', function () {
-  bookMarkButton.classList.add('is-active')
-  bookMarkButton.style.display = 'none'
-})
+  if (this.classList.contains('is-active')) {
+    // is-active 가 있는 상태
+    icon.classList.remove('ic-bookmark-filled')
+    icon.classList.add('ic-bookmark')
+    newCount = newCount - 1
+  } else {
+    // is-active 가 없는 상태
+    icon.classList.remove('ic-bookmark')
+    icon.classList.add('ic-bookmark-filled')
+    newCount = newCount + 1
+  }
+  countSpan.innerHTML = newCount.toLocaleString()
+  countSpan.setAttribute('aria-label', `북마크 ${newCount.toLocaleString}회`)
+
+  this.classList.toggle('is-active')
+}
+bookMarkButton.addEventListener('click', toggleOrderCtaBookmark)
