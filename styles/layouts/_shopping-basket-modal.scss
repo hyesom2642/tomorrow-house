@@ -9,6 +9,7 @@
   z-index: $shopping-basket-modal-level;
   max-width: 360px;
   display: none;
+  box-shadow: $popup-shadow;
 
   &.is-active {
     display: block;
