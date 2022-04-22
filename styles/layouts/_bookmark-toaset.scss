@@ -1,0 +1,59 @@
+.bookmark-toaset {
+  @include flexbox(between);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 56px;
+  background-color: $white;
+  z-index: $bookmark-toaset-level;
+  box-shadow: $popup-shadow;
+  padding-left: 36px;
+  padding-right: 12px;
+
+  &-title {
+    @include text-style(13, $primary);
+    font-weight: 400;
+  }
+
+  &-close-button {
+    @include inline-flexbox;
+    @include position-center-y;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    color: $tertiary;
+  }
+
+  &-button-group {
+    @include flexbox(end);
+
+    a {
+      margin-right: 4px;
+    }
+  }
+
+  @include responsive(T) {
+    max-width: 480px;
+    height: 80px;
+    padding-left: 56px;
+    padding-right: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+
+    &-title {
+      @include text-style(16);
+    }
+    &-close-button {
+      width: 56px;
+      height: 56px;
+      font-size: 24px;
+    }
+    &-button-group {
+      a {
+        margin-right: 8px;
+      }
+    }
+  }
+}
