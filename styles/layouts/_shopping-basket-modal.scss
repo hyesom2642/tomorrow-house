@@ -1,0 +1,37 @@
+.shopping-basket-modal {
+  @include position-center(fixed);
+  background-color: $white;
+  padding: 40px 24px;
+  overflow: hidden;
+  border-radius: 8px;
+  text-align: center;
+  width: calc(100vw - 15px * 2);
+  z-index: $shopping-basket-modal-level;
+  max-width: 360px;
+
+  .title {
+    @include text-style(16, $primary-dark);
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+
+  .button-group {
+    width: 100%;
+    a,
+    button {
+      width: 100%;
+    }
+    a {
+      margin-bottom: 8px;
+    }
+  }
+
+  @include responsive(T) {
+    padding: 40px 32px;
+
+    .title {
+      @include text-style(18);
+      margin-bottom: 16px;
+    }
+  }
+}
