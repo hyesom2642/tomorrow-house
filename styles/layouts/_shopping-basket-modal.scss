@@ -8,6 +8,11 @@
   width: calc(100vw - 15px * 2);
   z-index: $shopping-basket-modal-level;
   max-width: 360px;
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
 
   .title {
     @include text-style(16, $primary-dark);
