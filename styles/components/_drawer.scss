@@ -5,7 +5,7 @@
   $store-menu-item-length: 9;
   $interior-menu-item-length: 2;
 
-  &.is-active {
+  &.is-open {
     .navbar-menu-button {
       color: $blue;
     }
