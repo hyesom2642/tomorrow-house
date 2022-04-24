@@ -14,3 +14,27 @@ function closeSearchModal() {
   searchOverlay.classList.remove('is-active')
 }
 closeModalButton.addEventListener('click', closeSearchModal)
+
+const searchModalHistory = searchModal.querySelector('.search-history')
+const searchModalHistroyList = searchModalHistory.querySelector(
+  'ol.search-history-list'
+)
+const searchModalDeleteButton = searchModalHistory.querySelectorAll(
+  'button.search-delete'
+)
+const searchModalDeleteAllButton = searchModalHistory.querySelector('button')
+
+// item 삭제버튼
+function deleteSearchModalItem() {
+  const deleteToItem = this.parentNode
+  searchModalHistroyList.removeChild(deleteToItem)
+}
+searchModalDeleteButton.forEach((button) => {
+  button.addEventListener('click', deleteSearchModalItem)
+})
+
+// 전체삭제버튼
+function deleteSearchModalAll() {
+  searchModalHistroyList.innerHTML = ''
+}
+searchModalDeleteAllButton.addEventListener('click', deleteSearchModalAll)
