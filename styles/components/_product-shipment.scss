@@ -7,6 +7,12 @@
         &-divider:last-child {
           display: block;
         }
+
+        .icon-link {
+          i {
+            transform: rotate(180deg);
+          }
+        }
       }
 
       > .product-section-header {
