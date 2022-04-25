@@ -6,6 +6,8 @@ const orderFormModal = document.querySelector('.order-form-modal')
 
 const orderFormModalOverlay = document.querySelector('.overlay')
 
+const bookmarkToaset = document.querySelector('.bookmark-toaset')
+
 function openOrderFormModal() {
   orderFormModal.classList.add('is-open')
   orderFormModalOverlay.classList.add('is-active')
@@ -33,11 +35,13 @@ function toggleOrderCtaBookmark() {
     icon.classList.remove('ic-bookmark-filled')
     icon.classList.add('ic-bookmark')
     newCount = newCount - 1
+    bookmarkToaset.classList.remove('is-active')
   } else {
     // is-active 가 없는 상태
     icon.classList.remove('ic-bookmark')
     icon.classList.add('ic-bookmark-filled')
     newCount = newCount + 1
+    bookmarkToaset.classList.add('is-active')
   }
   countSpan.innerHTML = newCount.toLocaleString()
   countSpan.setAttribute('aria-label', `북마크 ${newCount.toLocaleString}회`)
@@ -45,3 +49,5 @@ function toggleOrderCtaBookmark() {
   this.classList.toggle('is-active')
 }
 bookMarkButton.addEventListener('click', toggleOrderCtaBookmark)
+
+// 북마크 됐을 때 bookmark-toaset에 .is-active
