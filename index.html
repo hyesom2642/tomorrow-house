@@ -903,7 +903,7 @@
             </section>
 
             <section
-              class="product-section product-spec is-open"
+              class="product-section product-spec"
               id="product-spec"
               role="tabpanel"
             >
@@ -2187,7 +2187,7 @@
 
               <!-- NOTE: 최근검색어가 존재할 경우 -->
               <div class="search-history-content">
-                <!-- <ol class="search-history-list">
+                <ol class="search-history-list">
                   <li class="search-history-item">
                     <button type="button" class="search-word">가구</button>
                     <button
@@ -2217,16 +2217,16 @@
                     >
                       <i class="ic-close"></i>
                     </button>
-                  </li> -->
-                </ol>
+                  </li>
+                </ol> 
               </div>
 
               <!-- NOTE: 최근검색어가 존재하지 않을 경우 -->
-              <div class="search-history-content">
+              <!-- <div class="search-history-content">
                 <p class="search-empty is-active">
                   최근 검색한 내역이 없습니다.
                 </p>
-              </div>
+              </div> -->
             </section>
           </div>
         </div>
@@ -2246,15 +2246,13 @@
                     id="order-form-modal-select-1"
                     required
                   >
-                    <option value="1">선택</option>
-                    <option value="2">선택사항2</option>
-                    <option value="3">선택사항3</option>
-                    <option value="4">선택사항4</option>
-                    <option value="5">선택사항5</option>
+                    <option value="0">선택</option>
+                    <option value="1">화이트 H0037(<span>37,900원</span>)</option>
+                    <option value="2">그린 H0037(<span>37,900원</span>)</option>
                   </select>
                   <i class="ic-caret" aria-hidden></i>
                 </div>
-                <div class="select-group">
+                <!-- <div class="select-group">
                   <select class="form-select" id="order-form-modal-select-2">
                     <option value="1">추가상품(선택)</option>
                     <option value="2">선택사항2</option>
@@ -2263,49 +2261,12 @@
                     <option value="5">선택사항5</option>
                   </select>
                   <i class="ic-caret" aria-hidden></i>
-                </div>
+                </div> -->
               </div>
 
               <div class="order-checkout">
                 <ul class="checkout-list">
                   <li class="checkout-item">
-                    <div class="checkout-card">
-                      <header class="checkout-header">
-                        <h4 class="checkout-title">
-                          추가상품 - 맛있는 제주 감귤을 직배송 / 제주도 귤 판매
-                          1위 믿고 구매하세요.
-                        </h4>
-                        <button
-                          class="delete-button"
-                          type="button"
-                          aria-label="해당 상품을 삭제하기"
-                        >
-                          <i class="ic-close" aria-hidden></i>
-                        </button>
-                      </header>
-                      <footer class="checkout-footer">
-                        <div class="checkout-select">
-                          <select id="order-form-modal-checkout-item-1">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                          </select>
-                          <i class="ic-caret" aria-hidden></i>
-                        </div>
-
-                        <output
-                          class="checkout-output"
-                          for="order-form-modal-checkout-item-1"
-                        >
-                          <div class="price-16">
-                            <strong class="amount">32,900</strong>
-                            <span class="currency">원</span>
-                          </div>
-                        </output>
-                      </footer>
-                    </div>
                   </li>
                 </ul>
               </div>
@@ -2348,28 +2309,30 @@
     </aside>
 
     <!-- NOTE : 북마크를 추가했을 경우 -->
-    <aside class="bookmark-toaset">
-      <h1 class="bookmark-toaset-title">스크랩했습니다</h1>
-      <button class="bookmark-toaset-close-button" type="button" >
-        <i class="ic-close"></i>
-      </button>
-
-      <div class="bookmark-toaset-button-group">
-        <a type="button" class="btn-outlined btn-32">스크랩북 보기</a>
-        <button type="button" class="btn-fill-primary btn-32">
-          폴더에 담기
+      <aside class="bookmark-toaset">
+        <h1 class="bookmark-toaset-title">스크랩했습니다</h1>
+        <button class="bookmark-toaset-close-button" type="button" >
+          <i class="ic-close"></i>
         </button>
-      </div>
-    </aside>
+  
+        <div class="bookmark-toaset-button-group">
+          <a type="button" class="btn-outlined btn-32">스크랩북 보기</a>
+          <button type="button" class="btn-fill-primary btn-32">
+            폴더에 담기
+          </button>
+        </div>
+      </aside>
+
 
     <!-- NOTE : 북마크를 삭제했을 경우 -->
-    <!-- <aside class="bookmark-toaset">
-      <h1 class="bookmark-toaset-title">스크랩북에서 삭제했습니다</h1>
-      <button class="bookmark-toaset-close-button" type="button" >
-        <i class="ic-close"></i>
-      </button>
-      </div>
-    </aside> -->
+      <!-- <aside class="bookmark-toaset">
+        <h1 class="bookmark-toaset-title">스크랩북에서 삭제했습니다</h1>
+        <button class="bookmark-toaset-close-button" type="button" >
+          <i class="ic-close"></i>
+        </button>
+        </div>
+      </aside> -->
+
 
     <div class="overlay" aria-hidden></div>
 
@@ -2384,5 +2347,7 @@
     <script src="./js/gnb-search.js"></script>
     <script src="./js/review.js"></script>
     <script src="./js/product-tab.js"></script>
+    <script src="./js/product-spec.js"></script>
+    <script src="./js/cart.js"></script>
   </body>
 </html>
