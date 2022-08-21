@@ -12,7 +12,6 @@ function closeSearchHistory() {
   gnbSearchHistory.classList.remove('is-active')
   window.removeEventListener('click', closeSearchHistoryOnClickOutside)
 }
-
 // NOTE : searchHistory 열고 닫기
 function closeSearchHistoryOnClickOutside(e) {
   if (gnbSearch.contains(e.target) == false) {
@@ -20,7 +19,7 @@ function closeSearchHistoryOnClickOutside(e) {
   }
 }
 function openSearchHistory(e) {
-  // gnbSearchHistoryList 안의 li가 없을 경우
+  // gnbSearchHistoryList 안의 li가 없을 경우 return한 곳에서 끝나도록 한다
   if (gnbSearchHistoryList.children.length === 0) {
     return
   }
@@ -32,24 +31,24 @@ function openSearchHistory(e) {
 }
 gnbSearchInput.addEventListener('focus', openSearchHistory)
 
-// NOTE : 전체삭제
-function deleteAll() {
+// 전체삭제
+function searchAllDelete() {
   gnbSearchHistoryList.innerHTML = ''
   closeSearchHistory()
 }
-deleteAllButton.addEventListener('click', deleteAll)
+deleteAllButton.addEventListener('click', searchAllDelete)
 
-// NOTE : li삭제
-function deleteItem(e) {
+// 검색기록삭제
+function searchDelete(e) {
   e.stopPropagation()
 
-  const deleteToItem = this.parentNode
-  gnbSearchHistoryList.removeChild(deleteToItem)
+  const searchedItem = this.parentNode
+  gnbSearchHistoryList.removeChild(searchedItem)
 
-  if (gnbSearchHistoryList.children.length === 0) {
+  if (deleteButton.length === 0) {
     closeSearchHistory()
   }
 }
 deleteButton.forEach((button) => {
-  button.addEventListener('click', deleteItem)
+  button.addEventListener('click', searchDelete)
 })
