@@ -2,6 +2,7 @@
   &.is-active {
     display: flex;
   }
+
   @include flexbox(between);
   position: fixed;
   left: 0;
