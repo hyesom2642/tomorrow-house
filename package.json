@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/hyesom2642/tomorrow-house/issues"
   },
-  "homepage": "https://github.com/hyesom2642/tomorrow-house#readme",
+  "homepage": "https://github.com/hyesom2642/tomorrow-house",
   "dependencies": {
     "node-sass": "^7.0.1"
   }
