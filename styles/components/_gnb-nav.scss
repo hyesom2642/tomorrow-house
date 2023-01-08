@@ -3,7 +3,7 @@
 
   &-list {
     @include flexbox(start);
-    margin-left: -($padding);
+    margin-left: -#{$padding};
   }
 
   &-item {
@@ -13,17 +13,19 @@
     &:hover {
       a {
         color: $blue;
+        transition: all 0.3s ease-in-out;
       }
     }
 
-    a {
-      display: block;
-      padding: $padding;
-      @include text-style(18, &primary);
-      font-weight: 700;
+    &:last-child {
+      margin-right: 0;
     }
-  }
-  &-item:last-child {
-    margin-right: 0;
+
+    a {
+      @include text-style(18, $primary);
+      display: block;
+      font-weight: 700;
+      padding: $padding;
+    }
   }
 }

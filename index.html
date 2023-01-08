@@ -52,117 +52,114 @@
         <div class="row">
           <div class="col-sm-4 col-md-12 col-lg-12">
             <!-- ===== gnb left start ===== -->
-            <div class="gnb-left">
-              <!-- sidebar menu button -->
-              <button
-                class="sm-only gnb-icon-button"
-                type="button"
-                aria-label="메뉴 열기 버튼"
-              >
-                <i class="ic-menu"></i>
-              </button>
-
-              <!-- main logo -->
-              <h1 class="logo">
-                <a href="/">
-                  <img src="./assets/images/logo.svg" alt="내일의 집" />
-                </a>
-              </h1>
-
-              <!-- mobile only left button -->
-              <button
-                class="sm-only"
-                type="button"
-                aria-label="겸색창 열기 버튼"
-              >
-                <i class="ic-search"></i>
-              </button>
-              <a
-                class="sm-only"
-                type="button"
-                aria-label="장바구니 페이지로 이동"
-              >
-                <i class="ic-cart"></i>
-              </a>
-
-              <nav class="sm-hidden gnb-nav">
-                <h2 class="visually-hidden">메뉴</h2>
-                <ul class="gnb-nav-list">
-                  <li class="gnb-nav-list"><a href="#">커뮤니티</a></li>
-                  <li class="gnb-nav-list"><a href="#">스토어</a></li>
-                  <li class="gnb-nav-list"><a href="#">인테리어시공</a></li>
-                </ul>
-              </nav>
-            </div>
-            <!-- ===== gnb left end ===== -->
-
-            <!-- ===== gnb right start ===== -->
-            <div class="gnb-right">
-              <div class="input-group lg-only">
-                <i class="ic-search" aria-hidden></i>
-                <input
-                  class="form-input"
-                  type="text"
-                  placeholder="스토어 검색"
-                />
-              </div>
-              <!-- gnb right buttons -->
-              <div class="button-group">
+            <div class="gnb-wrapper">
+              <div class="gnb-left">
+                <!-- sidebar menu button -->
                 <button
+                  class="sm-only gnb-icon-button is-menu"
                   type="button"
-                  class="sm-hidden gnb-icon-button"
-                  aria-label="겸색창 열기 버튼"
+                  aria-label="메뉴 열기 버튼"
                 >
-                  <i class="ic-search"></i>
+                  <i class="ic-menu"></i>
                 </button>
-                <a
-                  href="#"
-                  class="sm-hidden gnb-icon-button"
-                  aria-label="스크랩북 페이지로 이동"
-                >
-                  <i class="ic-bookmark"></i>
-                </a>
-                <a
-                  href="#"
-                  class="sm-hidden gnb-icon-button"
-                  aria-label="내 소식 페이지로 이동"
-                >
-                  <i class="ic-bell"></i>
-                </a>
-                <a
-                  href="#"
-                  class="sm-hidden gnb-icon-button"
-                  aria-label="장바구니 페이지로 이동"
-                >
-                  <i class="ic-cart"></i>
-                </a>
+
+                <!-- main logo -->
+                <h1 class="logo">
+                  <a href="/">
+                    <img src="./assets/images/logo.svg" alt="내일의 집" />
+                  </a>
+                </h1>
+
+                <nav class="gnb-nav sm-hidden">
+                  <h2 class="visually-hidden">메뉴</h2>
+                  <ul class="gnb-nav-list">
+                    <li class="gnb-nav-item"><a href="#">커뮤니티</a></li>
+                    <li class="gnb-nav-item is-active">
+                      <a href="#">스토어</a>
+                    </li>
+                    <li class="gnb-nav-item"><a href="#">인테리어시공</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <!-- ===== gnb left end ===== -->
+
+              <!-- ===== gnb right start ===== -->
+              <div class="gnb-right">
+                <div class="input-group lg-only">
+                  <i class="ic-search" aria-hidden></i>
+                  <input
+                    class="form-input"
+                    type="text"
+                    placeholder="스토어 검색"
+                  />
+                </div>
+                <!-- gnb right buttons -->
+                <div class="button-group">
+                  <button
+                    type="button"
+                    class="gnb-icon-button is-search lg-hidden"
+                    aria-label="겸색창 열기 버튼"
+                  >
+                    <i class="ic-search"></i>
+                  </button>
+                  <a
+                    href="#"
+                    class="sm-hidden gnb-icon-button"
+                    aria-label="스크랩북 페이지로 이동"
+                  >
+                    <i class="ic-bookmark"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="sm-hidden gnb-icon-button"
+                    aria-label="내 소식 페이지로 이동"
+                  >
+                    <i class="ic-bell"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="gnb-icon-button is-cart"
+                    aria-label="장바구니 페이지로 이동"
+                  >
+                    <i class="ic-cart"></i>
+                    <strong class="bedge">99</strong>
+                  </a>
+                  <button
+                    class="sm-hidden gnb-avatar-button"
+                    type="button"
+                    aria-label="유저의 마이메뉴 열기 버튼"
+                  >
+                    <div class="avatar-32">
+                      <img
+                        src="./assets/images/user-01.jpg"
+                        alt="user-profile1"
+                      />
+                    </div>
+                  </button>
+                </div>
+
                 <button
-                  class="sm-hidden gnb-avatar-button"
+                  class="sm-hidden btn-fill-primary btn-40"
                   type="button"
-                  aria-label="유저의 마이메뉴 열기 버튼"
+                  aria-label="글쓰기 메뉴 열기 버튼"
                 >
-                  <div class="avatar-32">
-                    <img
-                      src="./assets/images/user-01.jpg"
-                      alt="user-profile1"
-                    />
-                  </div>
+                  글쓰기
+                  <i class="ic-chevron" aria-hidden></i>
                 </button>
               </div>
-
-              <button
-                class="sm-hidden btn-fill-primary btn-40"
-                type="button"
-                aria-label="글쓰기 메뉴 열기 버튼"
-              >
-                글쓰기
-                <i class="ic-chevron" aria-hidden></i>
-              </button>
+              <!-- ===== gnb right end ===== -->
             </div>
-            <!-- ===== gnb right end ===== -->
           </div>
         </div>
       </div>
     </header>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+      integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </body>
 </html>

@@ -1,17 +1,30 @@
 .gnb {
-  $padding: 8px;
-
   position: relative;
-  border-bottom: 1px solid $border;
   background-color: $white;
+  border-bottom: 1px solid $border;
+
+  &-wrapper {
+    @include flexbox(between);
+    height: 50px;
+  }
+
+  &-right {
+    .button-group {
+      @include flexbox(end);
+    }
+
+    .gnb-icon-button.is-search {
+      margin-right: 4px;
+    }
+  }
 
   .logo {
     @include position-center;
 
     a {
       display: block;
-      padding: $padding;
     }
+
     img {
       display: block;
       width: auto;
@@ -19,108 +32,55 @@
     }
   }
 
-  &-right {
-    .gnb-button-group {
-      @include inline-flexbox(end);
-    }
-    .gnb-icon-button.is-search {
-      margin-right: 4px;
-    }
-  }
-
-  &-wrapper {
-    @include flexbox(between);
-    height: $gnb-height-sm - 1px;
-  }
-
-  /* ===== Tablet ===== */
+  /* ===== tablet ===== */
   @include responsive(T) {
-    &-wrapper {
-      height: $gnb-height-md - 1px;
+    &-left {
+      @include flexbox(start);
     }
+
+    &-right {
+      @include flexbox(end);
+
+      .button-group {
+        margin-right: 24px;
+
+        .gnb-icon-button {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    &-wrapper {
+      height: 80px;
+    }
+
     .logo {
       position: static;
       transform: none;
-      margin-right: 32px - ($padding * 2);
+      margin-right: 32px;
 
       img {
         height: 24px;
       }
     }
-    .gnb-left {
-      @include flexbox(start);
-    }
-    .gnb-right {
-      @include flexbox(end);
 
-      .gnb-button-group {
-        margin-right: 24px;
-        .gnb-icon-button {
-          margin-right: 8px;
-        }
-        .gnb-icon-button,
-        .gnb-avatar-button {
-          width: 32px;
-          height: 32px;
-        }
-        i {
-          font-size: 24px;
-        }
-        .gnb-auth {
-          margin-left: 8px;
-          transition: color 200ms ease-in-out;
-          a {
-            @include text-style(14, $secondary);
-            font-weight: 700;
-            &:first-child {
-              margin-right: 12px;
-            }
-            &:hover {
-              color: $blue;
-            }
-          }
-        }
-      }
-    }
     .btn-fill-primary {
       width: 88px;
-      height: 40px;
+
       i {
         margin-left: 4px;
       }
     }
   }
-  /* ===== Desktop ===== */
+
+  /* ===== desktop ===== */
   @include responsive(D) {
-    .gnb-search {
-      position: relative;
-      width: 264px;
-      margin-right: 24px;
-
+    &-right {
       .input-group {
-        width: 100%;
-        i {
-          font-size: 20px;
-        }
-      }
+        margin-right: 24px;
 
-      .search-history {
-        display: none;
-        position: absolute;
-        top: calc(100% + 8px);
-        left: 0;
-        width: 100%;
-        padding: 16px 8px 8px;
-        background-color: $white;
-        border: 1px solid $border;
-        border-radius: 4px;
-        box-shadow: $dropdown-shadow;
-
-        &.is-active {
-          display: block;
-        }
-        &-header {
-          padding: 0 8px;
+        .gnb-icon-button {
+          margin-right: 12px;
         }
       }
     }
