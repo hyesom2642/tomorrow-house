@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/hyesom2642/tomorrow-house",
   "dependencies": {
-    "node-sass": "^7.0.1"
+    "node-sass": "^8.0.0"
   }
 }
