@@ -5,7 +5,6 @@
   position: relative;
 
   &-content {
-    // display: none;
     @include position-center-x;
     top: $button-size + $tooltip-size;
     box-shadow: $dropdown-shadow;
