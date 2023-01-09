@@ -1,0 +1,105 @@
+.drawer-menu {
+  $drawer-menu-item-height: 36px;
+  $drawer-menu-bottom: 8px;
+  $community-length: 8;
+  $store-length: 9;
+  $expert-length: 2;
+
+  @function _drawer-menu-open($length) {
+    @return $drawer-menu-item-height * $length + $drawer-menu-bottom;
+  }
+
+  border-top: 1px solid $border;
+
+  &.is-active {
+    .drawer-menu-button {
+      color: $blue;
+    }
+  }
+
+  &.is-open {
+    &.is-community {
+      .drawer-menu-content {
+        max-height: _drawer-menu-open($community-length);
+      }
+    }
+
+    &.is-store {
+      .drawer-menu-content {
+        max-height: _drawer-menu-open($store-length);
+      }
+    }
+
+    &.is-expert {
+      .drawer-menu-content {
+        max-height: _drawer-menu-open($expert-length);
+      }
+    }
+
+    .drawer-menu-button .ic-chevron {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    .drawer-menu-list {
+      margin-bottom: $drawer-menu-bottom;
+    }
+  }
+
+  &-button {
+    @include flexbox(start);
+    @include text-style(18, $primary);
+    font-weight: 700;
+    width: 100%;
+    height: 54px;
+    padding: 0 8px;
+    position: relative;
+    transition: color 0.2s ease-in-out;
+
+    i {
+      &:first-child {
+        position: relative; // Note: check
+        top: 1px; // Note: check
+        font-size: 24px;
+        color: $primary;
+        margin-right: 8px;
+      }
+      &:last-child {
+        @include position-center-y;
+        right: 8px;
+        font-size: 16px;
+        color: $primary;
+        transition: transform 0.2s ease-in-out;
+      }
+    }
+  }
+
+  &-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+  }
+
+  &-item {
+    &.is-active {
+      a {
+        color: $blue;
+      }
+    }
+
+    @include flexbox(start);
+    width: 100%;
+    height: 36px;
+    padding: 0 12px;
+
+    a {
+      @include flexbox(start);
+      @include text-style(14, $primary);
+      font-weight: 700;
+    }
+
+    i.ic-new {
+      font-size: 16px;
+      color: $red;
+    }
+  }
+}
