@@ -35,9 +35,13 @@
   &-button {
     width: $button-size;
     height: $button-size;
+    overflow: hidden;
+    background-image: url('../../assets/images/img-user-default.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
     border: 3px solid $white;
     border-radius: 50%;
-    overflow: hidden;
     transition: border-color 0.2s ease-in-out;
 
     &:hover,
