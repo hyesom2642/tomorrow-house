@@ -9,8 +9,6 @@
     @return $drawer-menu-item-height * $length + $drawer-menu-bottom;
   }
 
-  border-top: 1px solid $border;
-
   &.is-active {
     .drawer-menu-button {
       color: $blue;
