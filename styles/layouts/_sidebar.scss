@@ -1,22 +1,11 @@
 .sidebar {
-  $sidebar-width: 240px;
-
-  z-index: $sidebar-level;
   position: fixed;
   top: 0;
   left: 0;
-  width: $sidebar-width;
+  width: 240px;
   height: 100vh;
-  overflow-y: auto;
-  overscroll-behavior: contain;
   padding: 32px 20px;
   background-color: $white;
-  transform: translate3d(-#{$sidebar-width}, 0, 0);
-  transition: transform 300ms ease-in-out;
-
-  &.is-active {
-    transform: translate3d(0, 0, 0);
-  }
 
   &-header {
     padding: 0 12px;
@@ -27,6 +16,7 @@
       a {
         display: block;
       }
+
       img {
         display: block;
         width: auto;
@@ -35,33 +25,39 @@
     }
   }
 
+  &-user,
+  &-auth {
+    @include flexbox(start);
+    height: 88px;
+  }
+
   &-user {
-    padding: 32px 0;
+    // margin: 32px 0;
 
     a {
       @include flexbox(start);
       @include text-style(14, $primary);
-      font-weight: 700;
       width: 100%;
-    }
 
-    .avatar-24 {
-      flex-grow: 0;
-      flex-shrink: 0;
-      margin-right: 8px;
-    }
+      .avatar-24 {
+        margin-right: 8px;
+        flex-shrink: 0;
+        flex-grow: 0;
+      }
 
-    .username {
-      flex-grow: 1;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      .username {
+        @include text-style(14, $primary);
+        flex-grow: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 
   &-auth {
-    padding: 24px 0;
     @include flexbox(between);
+    // margin: 24px 0;
 
     a {
       width: 84px;
@@ -69,11 +65,45 @@
   }
 
   &-nav {
-    .navbar-menu {
+    .drawer-menu {
+      padding: 0 12px;
       border-top: 1px solid $border;
+      border-bottom: 1px solid $border;
 
-      &.is-interior {
-        border-bottom: 1px solid $border;
+      &-button {
+        @include flexbox(between);
+        width: 100%;
+        height: 54px;
+        @include text-style(18);
+        font-weight: 700;
+
+        .ic-store {
+          font-size: 24px;
+        }
+        .ic-chevron {
+          font-size: 16px;
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .drawer-menu-content {
+      margin-bottom: 8px;
+    }
+    .drawer-menu-list {
+    }
+    .drawer-menu-item {
+      @include flexbox(start);
+      width: 100%;
+      height: 36px;
+
+      a {
+        @include text-style(14, $primary);
+        font-weight: 700;
+      }
+
+      i.ic-new {
+        color: $red;
       }
     }
   }
@@ -81,22 +111,120 @@
   &-user-menu {
     margin-top: 16px;
 
+    .user-menu-list {
+      padding-left: 12px;
+    }
     .user-menu-item {
-      a {
-        @include flexbox(start);
-        @include text-style(14, $primary);
-        width: 100%;
-        height: 36px;
-        padding: 0 12px;
+      @include flexbox(start);
+      width: 100%;
+      height: 36px;
 
-        &:active {
-          color: $blue;
-        }
+      a {
+        @include text-style(14, $primary);
       }
     }
   }
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
+
+// .sidebar {
+//   $sidebar-width: 240px;
+
+//   z-index: $sidebar-level;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: $sidebar-width;
+//   height: 100vh;
+//   overflow-y: auto;
+//   overscroll-behavior: contain;
+//   padding: 32px 20px;
+//   background-color: $white;
+//   transform: translate3d(-#{$sidebar-width}, 0, 0);
+//   transition: transform 300ms ease-in-out;
+
+//   &.is-active {
+//     transform: translate3d(0, 0, 0);
+//   }
+
+//   &-header {
+//     padding: 0 12px;
+
+//     .logo {
+//       @include flexbox(start);
+
+//       a {
+//         display: block;
+//       }
+//       img {
+//         display: block;
+//         width: auto;
+//         height: 20px;
+//       }
+//     }
+//   }
+
+//   &-user {
+//     padding: 32px 0;
+
+//     a {
+//       @include flexbox(start);
+//       @include text-style(14, $primary);
+//       font-weight: 700;
+//       width: 100%;
+//     }
+
+//     .avatar-24 {
+//       flex-grow: 0;
+//       flex-shrink: 0;
+//       margin-right: 8px;
+//     }
+
+//     .username {
+//       flex-grow: 1;
+//       overflow: hidden;
+//       text-overflow: ellipsis;
+//       white-space: nowrap;
+//     }
+//   }
+
+//   &-auth {
+//     padding: 24px 0;
+//     @include flexbox(between);
+
+//     a {
+//       width: 84px;
+//     }
+//   }
+
+//   &-nav {
+//     .navbar-menu {
+//       border-top: 1px solid $border;
+
+//       &.is-interior {
+//         border-bottom: 1px solid $border;
+//       }
+//     }
+//   }
+
+//   &-user-menu {
+//     margin-top: 16px;
+
+//     .user-menu-item {
+//       a {
+//         @include flexbox(start);
+//         @include text-style(14, $primary);
+//         width: 100%;
+//         height: 36px;
+//         padding: 0 12px;
+
+//         &:active {
+//           color: $blue;
+//         }
+//       }
+//     }
+//   }
+
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
+// }
