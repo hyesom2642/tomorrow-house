@@ -5,13 +5,13 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba($primary, 0.5);
-  visibility: hidden;
   opacity: 0;
-  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+  visibility: hidden;
+  background-color: rgba($primary, 0.5);
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 
   &.is-active {
-    visibility: visible;
     opacity: 1;
+    visibility: visible;
   }
 }
