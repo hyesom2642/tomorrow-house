@@ -1,69 +1,59 @@
 .lnb {
   $lnb-link-padding: 8px;
+  $grid-margin: $sm-margin + $gutter / 2; // 15px
 
-  overflow-x: auto;
   background-color: $white;
+  overflow-x: auto;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  @include no-scrollbar();
 
   &-list {
     @include inline-flexbox(start);
-    white-space: nowrap;
-    // width: max-content;
-    margin-left: -15px;
-    padding: 0 7px;
+    width: max-content;
     height: $lnb-height-sm;
+    white-space: nowrap;
     border-bottom: 1px solid $border;
+    margin-left: -#{$grid-margin};
+    padding: 0 #{$grid-margin - $lnb-link-padding};
   }
+
   &-item {
-    // flex-shrink: 0;
+    a {
+      @include inline-flexbox;
+      @include text-style(13, $primary-dark);
+      font-weight: 700;
+      height: 40px;
+      padding: 0 $lnb-link-padding;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s ease-in-out;
+    }
+
+    &:hover {
+      a {
+        color: $blue;
+      }
+    }
+
     &.is-active {
       a {
         color: $blue;
         border-bottom-color: $blue;
       }
     }
-
-    a {
-      @include inline-flexbox;
-      @include text-style(13, $primary-dark);
-      font-weight: 700;
-      height: $lnb-height-sm;
-      padding: 0 $lnb-link-padding;
-      border-bottom: 2px solid transparent;
-      transition: color 200ms ease-in-out;
-
-      &:hover {
-        color: $blue;
-      }
-      &:last-child {
-        i {
-          position: relative;
-          top: 2px;
-          font-size: 16px;
-          color: red;
-        }
-      }
-    }
   }
-  /* ===== Teblet ===== */
-  @include responsive(T) {
-    height: $lnb-height-md;
-    border-bottom: 1px solid $border;
-    overflow-x: visible;
 
+  /* ===== Tablet ===== */
+  @include responsive(T) {
     &-list {
-      padding: 0;
-      margin-left: 0;
-      border-bottom: 0;
-      height: auto;
+      height: $lnb-height-md;
+      margin: 0 -10px;
     }
     &-item {
+      padding: 13px $lnb-link-padding;
+
       a {
-        @include text-style(14);
-        height: $lnb-height-md;
+        @include text-style(14, $primary-dark);
+        font-weight: 700;
       }
     }
   }
