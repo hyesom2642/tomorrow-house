@@ -1,11 +1,9 @@
 .search-history {
-  $close-button-size: 32px;
-
   &-header {
     @include flexbox(between);
     margin-bottom: 8px;
 
-    .search-history-title,
+    .title,
     button {
       @include text-style(13, $secondary);
       font-weight: 400;
@@ -13,45 +11,54 @@
   }
 
   &-content {
-    // phone, tablet
-    // 최근검색어가 존재할 경우
-    .search-history-list {
-    }
-    .search-history-item {
-      position: relative;
-      border-radius: 2px;
-      &:hover {
-        background-color: $background;
-      }
-
-      .search-word {
-        @include text-style(16, $primary);
-        width: 100%;
-        text-align: left;
-        padding: 10px $close-button-size 10px 8px;
-        transition: background-color 200ms ease-in-out;
-      }
-      .search-delete {
-        @include text-style(16, $tertiary);
-        @include flexbox;
-        width: $close-button-size;
-        height: $close-button-size;
-        position: absolute;
-        top: 6px;
-        right: 0;
-        &:hover {
-          color: $border;
-        }
-      }
-    }
-
-    // 최근검색어가 존재하지 않을 경우
-    .search-empty {
+    /* Note: 최근 검색어가 없을 때(Empty) */
+    .placeholder {
       @include flexbox(start);
       @include text-style(16, $tertiary);
+      font-weight: 400;
       width: 100%;
       height: 44px;
       padding: 0 8px;
+      border-radius: 2px;
+    }
+  }
+
+  /* Note: 최근 검색어가 있을 때(Default) */
+
+  &-item {
+    @include flexbox(between);
+    position: relative;
+    border-radius: 2px;
+
+    &:hover {
+      background-color: $background;
+    }
+
+    .word-button {
+      @include text-style(16, $primary);
+      font-weight: 400;
+      padding: 10px 32px 10px 8px;
+      margin-right: 8px;
+      text-align: left;
+      flex-grow: 1;
+    }
+
+    .delete-button {
+      @include flexbox;
+      position: absolute;
+      right: 0;
+      top: 6px;
+      width: 32px;
+      height: 32px;
+      font-size: 16px;
+      font-weight: 400;
+      color: $tertiary;
+      flex-grow: 0;
+      flex-shrink: 0;
+
+      &:hover {
+        color: $primary;
+      }
     }
   }
 }
