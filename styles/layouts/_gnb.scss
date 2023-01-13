@@ -110,6 +110,8 @@
         background-color: $white;
         padding: 16px 8px 8px;
         box-shadow: $dropdown-shadow;
+        opacity: 0;
+        visibility: hidden;
 
         &-header {
           padding: 0 8px;
