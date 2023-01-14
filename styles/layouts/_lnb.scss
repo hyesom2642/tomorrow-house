@@ -44,16 +44,20 @@
 
   /* ===== Tablet ===== */
   @include responsive(T) {
+    height: $lnb-height-md;
+    overflow-x: visible;
+    border-bottom: 1px solid $border;
+
     &-list {
-      height: $lnb-height-md;
-      margin: 0 -10px;
+      height: auto;
+      padding: 0;
+      padding-left: 0;
+      border-bottom: 0;
     }
     &-item {
-      padding: 13px $lnb-link-padding;
-
       a {
-        @include text-style(14, $primary-dark);
-        font-weight: 700;
+        @include text-style(14);
+        height: $lnb-height-md;
       }
     }
   }
