@@ -1,22 +1,23 @@
 .global-footer {
   padding: 32px 0 40px 0;
   background-color: $background;
-  margin-bottom: $order-cta-height;
 
   &-title {
     @include text-style(13, $primary-dark);
     font-weight: 700;
 
-    .ic-chevron {
+    i.ic-chevron {
       display: inline-block;
       font-size: 12px;
       transform: rotate(-90deg);
     }
   }
+
   &-contact {
     @include text-style(24, $primary-dark);
     font-weight: 700;
   }
+
   &-time {
     @include text-style(12, $primary);
     font-weight: 400;
@@ -29,47 +30,50 @@
     letter-spacing: -0.01em;
     color: $secondary;
   }
+
   &-detail-item {
     @include flexbox(start);
 
     address {
+      display: inline;
       font-style: normal;
     }
 
     dt::after {
+      position: relative;
+      top: 1px;
       margin: 0 2px;
       content: ':';
     }
   }
 
   @include responsive(D) {
-    margin-bottom: 0;
-
     &-title {
       @include text-style(14);
     }
 
     &-contact {
-      margin-bottom: 2px;
+      transition: opacity 0.2s ease-in-out;
 
       &:hover {
-        opacity: 0.6;
+        opacity: 0.5;
       }
     }
 
     &-detail-list {
       @include flexbox(start);
     }
+
     &-detail-item {
-      a:hover {
-        text-decoration: underline;
-      }
       &::after {
-        content: '|';
         margin: 0 8px;
+        content: '|';
       }
       &:last-child::after {
         content: '';
+      }
+      address:hover {
+        text-decoration: underline;
       }
     }
   }
