@@ -1,67 +1,58 @@
 .product-tab {
-  position: sticky;
-  top: $gnb-height-sm + $lnb-height-sm;
-  z-index: $product-tab-level;
-
-  width: 100%;
-  height: $product-tab-height-sm;
-  border-bottom: 1px solid $border;
-  background-color: $white;
+  height: 40px;
 
   &-list {
-    @include flexbox;
+    @include flexbox(start);
     margin: 0 -15px;
+    border-bottom: 2px solid transparent;
   }
   &-item {
-    width: (100% / 5);
+    @include flexbox;
+    width: calc(100% / 5);
 
     &.is-active {
+      border-bottom: 2px solid $blue;
+
       button {
         color: $blue;
-        border-bottom-color: $blue;
       }
     }
+
     button {
       @include text-style(13, $primary-dark);
       font-weight: 700;
-      @include flexbox;
       width: 100%;
       height: 40px;
-      white-space: nowrap;
-      border-bottom: 2px solid transparent;
+      padding: 10px 0;
     }
+
     .badge {
+      @include text-style(12, $secondary);
+      font-weight: 700;
       margin-left: 4px;
-      color: $secondary;
     }
   }
 
   @include responsive(T) {
-    top: $gnb-height-md + $lnb-height-md;
-    height: $product-tab-height-md;
+    height: 54px;
     background-color: $background;
-    border-bottom: 0;
     margin: 40px 0;
 
-    &-item {
-      button {
-        @include text-style(16);
-        height: 54px;
-      }
-      .badge {
-        margin-left: 8px;
-      }
-    }
-  }
-  @include responsive(D) {
     &-list {
       margin: 0;
     }
     &-item {
+      @include flexbox;
+
       button {
-        &:hover {
-          color: $blue;
-        }
+        font-size: 16px;
+        height: 54px;
+        padding: 15px 0;
+      }
+
+      .badge {
+        font-size: 16px;
+        margin-left: 8px;
       }
     }
   }
