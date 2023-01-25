@@ -1,6 +1,4 @@
 .product-tab {
-  $grid-margin: $sm-margin + $gutter / 2;
-
   width: 100%;
   height: 40px;
   background-color: $white;
@@ -8,14 +6,11 @@
 
   &-list {
     @include flexbox;
-    height: 100%;
-    margin: 0 -#{$grid-margin};
+    margin: 0 -20px;
   }
 
   &-item {
-    @include flexbox;
     width: (100% / 5);
-    height: 100%;
 
     &.is-active {
       button {
@@ -33,21 +28,26 @@
       white-space: nowrap;
       border-bottom: 2px solid transparent;
 
+      &:active {
+        color: $blue;
+      }
+
       .badge {
         color: $secondary;
         margin-left: 4px;
-      }
-
-      &:active {
-        color: $blue;
       }
     }
   }
 
   @include responsive(T) {
-    background-color: $background;
     height: 54px;
+    margin: 40px 0;
+    background-color: $background;
     border-bottom: 0;
+
+    &-list {
+      margin: 0;
+    }
 
     &-item {
       button {
@@ -63,8 +63,10 @@
 
   @include responsive(D) {
     &-item {
-      &:hover {
-        color: $blue;
+      button {
+        &:hover {
+          color: $blue;
+        }
       }
     }
   }
