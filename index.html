@@ -496,6 +496,52 @@
                 <div class="tag-gray">무료배송</div>
               </div>
             </section>
+
+            <form class="order-form lg-only" action="/" method="POST">
+              <div class="order-form-select">
+                <div class="select-group is-active">
+                  <select class="form-select" id="select-1" required>
+                    <option value="1">선택</option>
+                    <option value="2">선택사항2</option>
+                    <option value="3">선택사항3</option>
+                    <option value="4">선택사항4</option>
+                    <option value="5">선택사항5</option>
+                  </select>
+                  <i class="ic-caret" aria-hidden></i>
+                </div>
+                <div class="select-group">
+                  <select class="form-select" id="select-2">
+                    <option value="1">추가상품 (선택)</option>
+                    <option value="2">선택사항2</option>
+                    <option value="3">선택사항3</option>
+                    <option value="4">선택사항4</option>
+                    <option value="5">선택사항5</option>
+                  </select>
+                  <i class="ic-caret" aria-hidden></i>
+                </div>
+              </div>
+
+              <dl class="order-form-summary">
+                <dt>주문금액</dt>
+                <dd>
+                  <output for="select-1 select-2">
+                    <div class="price-20">
+                      <strong class="amount">0</strong>
+                      <span class="currency">원</span>
+                    </div>
+                  </output>
+                </dd>
+              </dl>
+
+              <div class="order-form-button-group">
+                <button type="button" class="btn-outlined btn-55">
+                  장바구니
+                </button>
+                <button type="submit" class="btn-fill-primary btn-55">
+                  바로구매
+                </button>
+              </div>
+            </form>
           </div>
         </div>
 
@@ -689,7 +735,7 @@
         </div>
 
         <!-- ===== product-tab ===== -->
-        <div class="product-tab">
+        <!-- <div class="product-tab">
           <div class="container">
             <div class="row">
               <div class="col-sm-4 col-lg-8">
@@ -739,7 +785,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </main>
 
@@ -1014,6 +1060,15 @@
         </div>
       </div>
     </aside>
+
+    <!-- ===== Add to cart modal ===== -->
+    <!-- <aside class="cart-modal">
+      <p>장바구니에 상품을 담았습니다</p>
+      <button type="button" class="btn-fill-primary btn-48">
+        장바구니 보러가기
+      </button>
+      <button type="button" class="btn-fill-secondary btn-48">확인</button>
+    </aside> -->
 
     <div class="overlay" aria-hidden></div>
 

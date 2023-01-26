@@ -1,32 +1,32 @@
-.product-info-order {
-  // margin-bottom: 40px;
+.order-form {
+  margin-bottom: 40px;
 
   &-select {
+    margin-bottom: 20px;
+
     .select-group:first-child {
       margin-bottom: 8px;
     }
   }
 
-  .order-summary {
+  &-summary {
     @include flexbox(between);
-    padding: 20px 0;
-  }
-  .order-button-group {
-    @include flexbox();
-    button {
-      width: 50%;
-      &:first-child {
-        margin-right: 8px;
-      }
+    margin-bottom: 20px;
+
+    dt {
+      @include text-style(13, $primary-dark);
+      font-weight: 700;
     }
   }
 
-  .order-checkout {
-    .checkout-item {
-      padding: 8px 0;
+  &-button-group {
+    @include flexbox;
 
-      &:last-child {
-        margin-bottom: 0;
+    button {
+      width: 50%;
+
+      &:first-child {
+        margin-right: 8px;
       }
     }
   }
