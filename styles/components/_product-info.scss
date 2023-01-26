@@ -7,61 +7,20 @@
     .info-brand {
       @include text-style(13, $blue);
       font-weight: 700;
-
-      &:active {
-        opacity: 0.4;
-      }
     }
+
     .info-title {
       @include text-style(18, $primary-dark);
       font-weight: 400;
       margin-bottom: 4px;
     }
+
     .info-review {
       @include flexbox(start);
 
-      .star-rating {
-        @include star-rating(13px);
+      .star-rating-13 {
+        margin-right: 8px;
       }
-
-      p {
-        @include text-style(13, $blue);
-        font-weight: 700;
-        margin-left: 8px;
-      }
-    }
-  }
-  &-price {
-    margin-bottom: 16px;
-
-    .info-original-price {
-      @include flexbox(start);
-
-      .discount-rate {
-        @include inline-flexbox(start);
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 24px;
-        color: $blue;
-
-        .rate {
-          font-family: $font-price;
-        }
-        .percent {
-          font-family: $font-main;
-        }
-      }
-    }
-    .info-sale-price {
-      @include flexbox(start);
-      margin-bottom: 12px;
-
-      .tag-red {
-        margin-left: 4px;
-      }
-    }
-    .info-point {
-      @include text-style(13, $secondary);
 
       strong {
         @include text-style(13, $blue);
@@ -70,14 +29,52 @@
     }
   }
 
+  &-price {
+    margin-bottom: 16px;
+
+    .info-price-sale {
+      @include flexbox(start);
+      @include text-style(20, $blue);
+      font-weight: 700;
+
+      .rate {
+        font-family: $font-price;
+      }
+      .percent {
+        font-family: $font-main;
+      }
+    }
+
+    .info-price-origin {
+      @include flexbox(start);
+      margin-bottom: 12px;
+
+      .badge {
+        margin-left: 4px;
+      }
+    }
+
+    .info-price-point {
+      @include text-style(13, $secondary);
+      font-weight: 400;
+
+      strong {
+        @include text-style(13, $blue);
+        font-weight: 700;
+        margin-right: 4px;
+      }
+    }
+  }
+
   &-delivery {
+    @include column-flexbox(start, start);
     padding-top: 12px;
     border-top: 1px solid $border;
 
     span {
       @include text-style(16, $primary);
       font-weight: 400;
-      display: block;
+      display: inline-block;
       margin-bottom: 2px;
     }
   }
@@ -90,57 +87,56 @@
         display: inline-block;
         margin-bottom: 8px;
       }
+
       .info-title {
-        @include text-style(24);
+        @include text-style(24, $primary-dark);
+        font-weight: 400;
         margin-bottom: 8px;
       }
+
       .info-review {
-        .star-rating {
-          @include star-rating(16px);
+        .star-rating-13 {
+          font-size: 16px;
+          margin-right: 8px;
         }
-        p strong {
-          margin-right: -3px;
-        }
-      }
-    }
-    &-price {
-      .info-price-wrapper {
-        margin-bottom: 12px;
-        align-items: flex-end;
-
-        @include flexbox(start, end);
-        .discount-rate {
-          margin-right: 16px;
+        span {
+          @include text-style(13, $blue);
           font-weight: 700;
-          color: $blue;
-
-          .rate {
-            font-family: $font-price;
-            font-size: 44px;
-            line-height: 36px;
-            margin-right: 2px;
-          }
-          .percent {
-            font-family: $font-main;
-            font-size: 20px;
-            line-height: 20px;
-          }
         }
-        .info-price {
-          .price-32 {
-            margin-right: 8px;
-          }
-          &-sale {
-            @include flexbox(start);
-          }
-        }
-      }
-      .info-point {
-        margin-bottom: 20px;
       }
     }
+
+    &-price {
+      margin-bottom: 20px;
+
+      .info-price-wrapper {
+        @include flexbox(start);
+        margin-bottom: 12px;
+      }
+
+      .info-price-sale {
+        @include flexbox(end, end);
+        margin-right: 16px;
+
+        .rate {
+          font-size: 44px;
+          line-height: 36px;
+        }
+        .percent {
+          font-size: 20px;
+          line-height: 1;
+        }
+      }
+
+      .info-price-origin {
+        .badge {
+          margin-left: 8px;
+        }
+      }
+    }
+
     &-delivery {
-      padding: 16px 0 20px 0;
+      padding-bottom: 20px;
       border-bottom: 1px solid $border;
 
       span {
@@ -148,9 +144,8 @@
       }
     }
   }
+
   @include responsive(D) {
-    &-delivery {
-      margin-bottom: 20px;
-    }
+    margin-bottom: 20px;
   }
 }
