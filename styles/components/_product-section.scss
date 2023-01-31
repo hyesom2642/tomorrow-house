@@ -1,6 +1,4 @@
 .product-section {
-  padding-bottom: 20px;
-
   &-divider {
     margin: 0 -15px;
     height: 8px;
@@ -12,7 +10,6 @@
   }
 
   @include responsive(T) {
-    padding-bottom: 80px;
     width: 100%;
     max-width: 692px;
     margin: 0 auto;
