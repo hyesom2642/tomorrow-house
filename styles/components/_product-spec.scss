@@ -2,7 +2,6 @@
   position: relative;
   height: 470px;
   overflow: hidden;
-  padding: 20px 0;
 
   &.is-open {
     height: auto;
@@ -43,7 +42,6 @@
   }
 
   @include responsive(T) {
-    padding: 80px 0;
     height: auto;
 
     &-header {
