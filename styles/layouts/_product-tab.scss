@@ -1,10 +1,13 @@
 .product-tab {
-  $grid-margin: 15px;
+  $grid-margin: $sm-margin + ($gutter / 2);
 
+  position: sticky;
+  top: $gnb-height-sm + $lnb-height-sm;
+  width: 100%;
+  height: $product-tab-height-sm;
   background-color: $white;
   border-bottom: 1px solid $border;
-  width: 100%;
-  height: 40px;
+  z-index: $product-tab-level;
 
   &-list {
     @include flexbox;
@@ -14,7 +17,7 @@
   &-item {
     @include flexbox;
     width: (100% / 5);
-    height: 40px;
+    height: $product-tab-height-sm;
     padding: 0 8px;
     border-bottom: 2px solid transparent;
 
@@ -38,7 +41,7 @@
       @include text-style(13, $primary);
       font-weight: 700;
       width: 100%;
-      height: 40px;
+      height: $product-tab-height-sm;
       white-space: nowrap;
     }
 
@@ -50,7 +53,8 @@
   }
 
   @include responsive(T) {
-    height: 54px;
+    top: $gnb-height-md + $lnb-height-md;
+    height: $product-tab-height-md;
     background-color: $background;
     border-bottom: 0;
 
@@ -59,7 +63,7 @@
     }
 
     &-item {
-      height: 54px;
+      height: $product-tab-height-md;
       padding: 0;
 
       button {
