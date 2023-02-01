@@ -18,6 +18,10 @@
   .icon-link {
     @include position-center-y;
     right: -15px;
+
+    &:hover {
+      opacity: 0.4;
+    }
   }
   .text-link {
     @include text-style(14, $blue);
