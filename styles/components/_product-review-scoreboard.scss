@@ -1,0 +1,141 @@
+.product-review-scoreboard {
+  @include flexbox;
+  width: 100%;
+  height: 152px;
+  background-color: $background;
+  border-radius: 4px;
+
+  &::before {
+    order: 2;
+    content: '';
+    display: block;
+    width: 1px;
+    height: 96px;
+    background-color: $border;
+  }
+
+  .scoreboard-summary,
+  .scoreboard-detail {
+    width: 50%;
+  }
+
+  .scoreboard-summary {
+    order: 1;
+    @include column-flexbox;
+
+    .average-score {
+      @include text-style(24, $primary-dark);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .star-rating {
+      @include star-rating(20px);
+    }
+  }
+
+  .scoreboard-detail {
+    order: 3;
+    text-align: center;
+
+    .score-stats-list {
+      display: inline-block;
+    }
+
+    .score-stats-item {
+      @include flexbox(start);
+      @include text-style(12, $secondary);
+      font-weight: 400;
+      margin-bottom: 4px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.is-active {
+        dt,
+        .count {
+          color: $blue;
+          font-weight: 700;
+        }
+      }
+
+      dt {
+        margin-right: 4px;
+        white-space: nowrap;
+      }
+
+      .bar-graph {
+        width: 70px;
+        height: 5px;
+        background-color: $border;
+        border-radius: (5px / 2);
+        margin-right: 4px;
+        overflow: hidden;
+
+        .active-bar {
+          width: 30px;
+          height: 5px;
+          background-color: $blue;
+          border-radius: (5px / 2);
+        }
+      }
+
+      .count {
+        font-weight: 400;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    height: 148px;
+    padding: 0 72px;
+
+    &::before {
+      height: 72px;
+      margin: 0 69px;
+    }
+
+    .scoreboard-summary,
+    .scoreboard-detail {
+      width: auto;
+    }
+
+    .scoreboard-summary {
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+
+      .average-score {
+        margin-bottom: 0;
+      }
+
+      .star-rating {
+        @include star-rating(24px);
+        margin-right: 16px;
+      }
+    }
+
+    .scoreboard-detail {
+      .score-stats-item {
+        dt {
+          margin-right: 8px;
+        }
+
+        .bar-graph {
+          width: 180px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes graph-bar-active {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
