@@ -3,69 +3,61 @@
   border-bottom: 1px solid $border;
 
   &:last-child {
-    border-bottom: 0;
+    border: 0;
   }
 
   &-header {
     @include flexbox(start);
     margin-bottom: 20px;
 
-    .avatar-24,
-    .review-username {
-      &:active {
-        opacity: 0.5;
-      }
-    }
     .avatar-24 {
-      padding: 6px 0;
+      display: inline-block;
       margin-right: 8px;
     }
 
-    .review-username {
-      a {
+    .user-info {
+      @include column-flexbox(start, start);
+
+      .user-name {
         @include text-style(13, $primary);
         font-weight: 400;
       }
     }
 
-    .detail {
+    .user-rating {
       @include flexbox(start);
 
       .star-rating-13 {
         margin-right: 4px;
       }
-      .etc {
-        @include text-style(12, $secondary);
-        font-weight: 400;
+    }
 
-        time:after {
-          content: '∙';
-          margin: 0 0 0 4px;
-        }
+    .user-etc {
+      @include text-style(12, $secondary);
+      font-weight: 400;
+
+      span::before {
+        display: inline-block;
+        content: '∙';
+        margin-right: 4px;
       }
     }
   }
 
-  &-body {
+  &-content {
     margin-bottom: 20px;
-    .review-image {
-      width: 64px;
-      height: 64px;
-      border-radius: 4px;
-      overflow: hidden;
-      margin-bottom: 8px;
-
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
 
     p {
       @include text-style(13, $primary);
       font-weight: 400;
+    }
+
+    img {
+      display: block;
+      width: 64px;
+      height: 64px;
+      border-radius: 4px;
+      margin-bottom: 8px;
     }
   }
 
@@ -77,23 +69,22 @@
       width: 120px;
       margin-right: 8px;
 
-      i {
-        position: relative;
-        top: 2px;
-        color: $white;
+      i.ic-check {
+        width: 20px;
+        height: 20px;
         font-size: 20px;
         margin-right: 4px;
-        margin-left: -4px;
       }
     }
+
     p {
       @include text-style(12, $primary);
+      font-weight: 400;
 
       strong {
         font-weight: 400;
 
         span {
-          color: $primary-dark;
           font-weight: 700;
         }
       }
@@ -103,25 +94,28 @@
   @include responsive(T) {
     padding: 40px 0;
 
-    &-body,
+    &-content,
     &-footer {
       padding-left: 32px;
     }
-    &-body {
-      .review-image {
+
+    &-content {
+      img {
         width: 112px;
         height: 112px;
         margin-bottom: 16px;
       }
+
       p {
         @include text-style(14);
       }
     }
   }
+
   @include responsive(D) {
     &-header {
       .avatar-24,
-      .review-username {
+      .user-name {
         &:hover {
           opacity: 0.5;
         }
@@ -130,15 +124,15 @@
   }
 }
 
-.product-section-content {
-  .review-empty {
-    @include text-style(16, $secondary);
-    font-weight: 400;
-    text-align: center;
+// .product-section-content {
+//   .review-empty {
+//     @include text-style(16, $secondary);
+//     font-weight: 400;
+//     text-align: center;
 
-    strong {
-      color: $blue;
-      font-weight: 700;
-    }
-  }
-}
+//     strong {
+//       color: $blue;
+//       font-weight: 700;
+//     }
+//   }
+// }

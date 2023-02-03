@@ -42,14 +42,8 @@
 @import './components/product-section-headers';
 @import './components/product-table';
 @import './components/product-spec';
-@import './components/product-review-card';
-@import './components/inquiry-card';
-@import './components/product-inquiry';
-@import './components/product-shipment';
-@import './components/recommendation-card';
-@import './components/product-recommendation';
-@import './components/user-gallery-card';
-@import './components/user-gallery';
+@import './components/product-review-scoreboard.scss';
+@import './components/review-card';
 
 @import './layouts/grids';
 @import './layouts/gnb';
