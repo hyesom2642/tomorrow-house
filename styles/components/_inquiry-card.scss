@@ -2,8 +2,8 @@
   padding-bottom: 40px;
 
   &-header {
-    margin-bottom: 8px;
     @include text-style(12);
+    margin-bottom: 8px;
 
     .detail,
     .etc {
@@ -11,15 +11,12 @@
     }
 
     .detail {
-      color: $primary;
-      font-weight: 400;
+      margin-bottom: 8px;
 
       dd {
-        margin-bottom: 8px;
+        color: $primary;
+        font-weight: 400;
 
-        &.is-answered {
-          color: $blue;
-        }
         &::after {
           content: '|';
           margin: 0 4px;
@@ -27,15 +24,20 @@
         &:last-child::after {
           content: none;
         }
+
+        &.is-answered {
+          color: $blue;
+        }
       }
     }
+
     .etc {
       color: $tertiary;
 
       strong {
         font-weight: 400;
 
-        &:after {
+        &::after {
           content: '|';
           margin: 0 4px;
         }
@@ -44,45 +46,66 @@
   }
 
   &-body {
-    .inquiry-content {
-      @include text-style(13);
+    .question-content {
+      @include text-style(13, $primary);
       position: relative;
       padding-left: 20px;
 
-      &:first-child:not(:last-child) {
-        margin-bottom: 12px;
-      }
-    }
-    span {
-      position: absolute;
-      top: 0;
-      left: 0;
-      color: $blue;
-      font-weight: 700;
-    }
-    p {
-      @include flexbox(start);
-      color: $primary;
-      font-weight: 400;
-
-      i {
-        font-size: 16px;
-        color: $tertiary;
-        margin-right: 8px;
-      }
-    }
-    .seller {
-      margin-bottom: 4px;
-      @include flexbox(start);
-
-      strong {
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $blue;
         font-weight: 700;
-        color: $primary-dark;
-        margin-right: 4px;
       }
-      time {
-        @include text-style(12, $tertiary);
+
+      p {
         font-weight: 400;
+
+        i {
+          position: relative;
+          top: 2px;
+          font-size: 16px;
+          color: $tertiary;
+          margin-right: 4px;
+        }
+      }
+    }
+
+    .answer-content {
+      @include text-style(13);
+      position: relative;
+      padding-left: 20px;
+      margin-top: 12px;
+
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $blue;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .info {
+        @include flexbox(start);
+        margin-bottom: 4px;
+
+        .seller {
+          color: $primary-dark;
+          font-weight: 700;
+          margin-right: 4px;
+        }
+
+        time {
+          @include text-style(12, $tertiary);
+          font-weight: 400;
+        }
+
+        p {
+          color: $primary;
+          font-weight: 400;
+        }
       }
     }
   }
@@ -91,20 +114,32 @@
     &-header {
       margin-bottom: 20px;
     }
+
     &-body {
-      .inquiry-content {
+      .question-content {
         @include text-style(16);
         padding-left: 24px;
 
-        &:first-child:not(:last-child) {
-          margin-bottom: 16px;
+        p {
+          font-weight: 400;
+
+          i {
+            position: relative;
+            top: 2px;
+            font-size: 24px;
+            color: $tertiary;
+            margin-right: 4px;
+          }
         }
       }
-      .seller {
-        margin-bottom: 8px;
 
-        strong {
-          @include text-style(16);
+      .answer-content {
+        @include text-style(16);
+        padding-left: 24px;
+        margin-top: 16px;
+
+        span {
+          font-size: 16px;
         }
       }
     }
