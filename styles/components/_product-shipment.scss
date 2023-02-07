@@ -1,29 +1,17 @@
 .product-shipment {
   @include mobile-only {
-    &.is-open {
-      .product-section {
-        display: block;
-
-        &-divider:last-child {
-          display: block;
-        }
-
-        .icon-link {
-          i {
-            transform: rotate(180deg);
-          }
-        }
-      }
-
-      > .product-section-header {
-        display: none;
-      }
+    .product-section,
+    .product-section-divider:last-child {
+      display: none;
     }
 
-    .product-section {
-      display: none;
+    &.is-open {
+      .product-section,
+      .product-section-divider:last-child {
+        display: block;
+      }
 
-      &-divider:last-child {
+      .product-section-header.sm-only {
         display: none;
       }
     }
