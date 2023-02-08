@@ -3,43 +3,54 @@
     @include flexbox(between, start);
     flex-wrap: wrap;
   }
-  .recommendation-item {
-    width: calc(50% - 10px); // width: (100% - 20px) / 2
 
-    a {
-      display: block;
-    }
+  .recommendation-item {
+    width: calc(50% - 10px); // (100% - 20px) / 2
+    height: auto;
 
     &:nth-child(1),
     &:nth-child(2) {
       margin-bottom: 20px;
     }
 
-    &:active {
-      img {
-        transform: translate(-50%, -50%) scale(1.1);
-      }
-      .recommendation-card-title {
-        opacity: 0.7;
+    a {
+      display: block;
+
+      &:active {
+        img {
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .recommendation-card-title {
+          opacity: 0.5;
+        }
       }
     }
   }
 
   @include responsive(T) {
     .recommendation-item {
-      width: calc(33.3333% - 5.33px); //  width: (100% - 16px) / 3
+      width: calc(33.333% - 10.666px); // (100% - 32px) / 3
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        margin-bottom: 0px;
+      }
 
       &:last-child {
         display: none;
       }
+    }
+  }
 
-      &:hover {
-        img {
-          transform: translate(-50%, -50%) scale(1.1);
-        }
-        .recommendation-card-title {
-          opacity: 0.7;
-        }
+  @include responsive(D) {
+    .recommendation-item a:hover {
+      img {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      .recommendation-card-title {
+        opacity: 0.5;
       }
     }
   }
