@@ -1,50 +1,96 @@
 .order-form-modal {
   position: fixed;
-  bottom: 0;
   left: 0;
+  bottom: 0;
   width: 100%;
-  max-height: 75vh;
-  padding-top: 16px;
   background-color: $white;
-  box-shadow: 0px -4px 20px rgba(0, 0, 0, 0.15);
   border-radius: 12px 12px 0 0;
+  box-shadow: $dropdown-shadow;
+  padding-top: 16px;
   z-index: $order-form-modal-level;
   display: none;
-  overflow-y: auto;
+  max-height: 75vh;
+  overflow-y: scroll;
   overscroll-behavior: contain;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &.is-open {
     display: block;
-    animation-name: order-form-movement;
-    animation-duration: 500ms;
+    animation-name: order-form-modal-movement;
+    animation-duration: 0.3s;
   }
 
-  .order-checkout {
-    margin-top: 8px;
+  .order-form {
+    margin-bottom: 0;
   }
-  .order-summary {
-    padding: 16px 0;
-    margin-bottom: 48px + 4px;
+
+  .order-form-select,
+  .order-checkouts,
+  .order-form-summary {
+    padding: 0 15px;
   }
-  .order-button-group {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+
+  .order-form-select {
+    margin-bottom: 8px;
+
+    .select-group {
+      margin-bottom: 4px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .order-checkouts {
+    margin-bottom: 16px;
+
+    .checkout-title {
+      @include text-style(13, $primary);
+      font-weight: 400;
+    }
+  }
+
+  .order-form-summary {
+    @include flexbox(between);
+    margin-bottom: 16px;
+
+    dt {
+      @include text-style(13, $primary-dark);
+      font-weight: 700;
+    }
+  }
+
+  .order-form-button-group {
+    @include flexbox(start);
     padding: 4px;
     padding-top: 0;
-    background-color: $white;
+
+    button {
+      width: 50%;
+
+      &:first-child {
+        margin-right: 4px;
+      }
+    }
   }
 
   @include responsive(T) {
     padding-top: 32px;
+    max-height: 50vh;
   }
 }
 
-@keyframes order-form-movement {
+@keyframes order-form-modal-movement {
   0% {
     transform: translate3d(0, 100%, 0);
   }
+
   100% {
     transform: translate3d(0, 0, 0);
   }
