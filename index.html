@@ -1504,7 +1504,7 @@
           </div>
 
           <div class="col-lg-4">
-            <section class="floating-order-form lg-only">
+            <section class="floating-order-form order-form lg-only">
               <form class="order-form" action="/" method="POST">
                 <div class="order-form-select">
                   <div class="select-group is-active">
@@ -1536,7 +1536,7 @@
                   </div>
                 </div>
 
-                <!-- <div class="order-checkouts">
+                <div class="order-checkouts">
                   <ul class="checkout-list">
                     <li class="checkout-item">
                       <div class="checkout-card">
@@ -1578,7 +1578,7 @@
                       </div>
                     </li>
                   </ul>
-                </div> -->
+                </div>
 
                 <dl class="order-form-summary">
                   <dt>주문금액</dt>
@@ -1594,10 +1594,22 @@
                   </dd>
                 </dl>
 
-                <div class="order-form-button-group">
-                  <button type="button" class="bookmark-button btn-55">
-                    <i class="ic-bookmark" aria-label="북마크 버튼"></i>
+                <div class="order-form-button-group button-group">
+                  <button
+                    type="button"
+                    class="bookmark-button btn-55"
+                    aria-label="북마크에 추가"
+                  >
+                    <i class="ic-bookmark" aria-hidden></i>
                   </button>
+                  <!-- ===== 북마크 버튼이 활성화 되었을 때 -->
+                  <!-- <button
+                    type="button"
+                    class="bookmark-button is-active btn-55"
+                    aria-label="북마크에 해제"
+                  >
+                    <i class="ic-bookmark-filled" aria-hidden></i>
+                  </button> -->
                   <button type="button" class="btn-outlined btn-55">
                     장바구니
                   </button>
@@ -1989,6 +2001,30 @@
         </div>
       </form>
     </aside>
+
+    <!-- ===== 북마크 체크 할 경우 ===== -->
+    <aside class="bookmark-toast">
+      <h1 class="title">스크랩했습니다</h1>
+
+      <button type="button" class="close-button" aria-label="닫기 버튼">
+        <i class="ic-close" aria-hidden></i>
+      </button>
+
+      <div class="button-group">
+        <a type="button" class="btn-outlined btn-32">스크랩북 보기</a>
+        <button type="button" class="btn-fill-primary btn-32">
+          폴더에 담기
+        </button>
+      </div>
+    </aside>
+    <!-- ===== 북마크 삭제 할 경우 ===== -->
+    <!-- <aside class="bookmark-toast">
+      <h1 class="title">스크랩북에서 삭제했습니다</h1>
+      <button type="button" class="close-button" aria-label="닫기 버튼">
+        <i class="ic-close" aria-hidden></i>
+      </button>
+      </div>
+    </aside> -->
 
     <!-- ===== Add to cart modal ===== -->
     <!-- <aside class="cart-modal">
