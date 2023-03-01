@@ -1,41 +1,43 @@
 .shopping-basket-modal {
   @include position-center(fixed);
-  background-color: $white;
-  padding: 40px 24px;
-  overflow: hidden;
-  border-radius: 8px;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 15px * 2);
   text-align: center;
-  width: calc(100vw - 15px * 2);
-  z-index: $shopping-basket-modal-level;
-  max-width: 360px;
-  display: none;
+  padding: 40px 24px;
+  background-color: $white;
+  border-radius: 8px;
   box-shadow: $popup-shadow;
+  z-index: $shopping-basket-modal-level;
+  display: none;
 
   &.is-active {
     display: block;
   }
 
-  .title {
+  h1 {
     @include text-style(16, $primary-dark);
     font-weight: 700;
     margin-bottom: 24px;
   }
 
   .button-group {
-    width: 100%;
+    @include column-flexbox;
+
+    a {
+      margin-bottom: 8px;
+    }
+
     a,
     button {
       width: 100%;
-    }
-    a {
-      margin-bottom: 8px;
     }
   }
 
   @include responsive(T) {
     padding: 40px 32px;
+    max-width: 360px;
 
-    .title {
+    h1 {
       @include text-style(18);
       margin-bottom: 16px;
     }
