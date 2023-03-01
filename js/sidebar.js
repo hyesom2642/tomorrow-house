@@ -1,28 +1,15 @@
-const sidebarMenuOpenButton = document.querySelector('.gnb-icon-button.is-menu')
-const sidebar = document.querySelector('.sidebar')
-const overlay = document.querySelector('.overlay')
+const sidebarOpenButton = document.querySelector('.gnb-icon-button.is-menu')
+const sidebar = document.querySelector('.sidebar.sm-only')
+const sidebarOverlay = document.querySelector('.overlay')
 
 function openSidebar() {
+  sidebarOverlay.classList.add('is-active')
   sidebar.classList.add('is-active')
-  overlay.classList.add('is-active')
 }
-sidebarMenuOpenButton.addEventListener('click', openSidebar)
+sidebarOpenButton.addEventListener('click', openSidebar)
 
 function closeSidebar() {
+  sidebarOverlay.classList.remove('is-active')
   sidebar.classList.remove('is-active')
-  overlay.classList.remove('is-active')
 }
-overlay.addEventListener('click', closeSidebar)
-
-// sidebar-drawer
-const sidebarMenuButton = document.querySelectorAll(
-  '.sidebar .navbar-menu-button'
-)
-
-function sidebarDrawer() {
-  const navbarMenuContainer = this.parentNode
-  navbarMenuContainer.classList.toggle('is-open')
-}
-sidebarMenuButton.forEach((button) => {
-  button.addEventListener('click', sidebarDrawer)
-})
+sidebarOverlay.addEventListener('click', closeSidebar)
