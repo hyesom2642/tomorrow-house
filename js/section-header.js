@@ -1,10 +1,11 @@
-const productShipment = document.querySelector('.product-shipment')
-const productSectionButton = document.querySelectorAll(
-  '.product-shipment .product-section-header .icon-link'
+const productSectionHaederIconButton = document.querySelectorAll(
+  '.product-section-header button.icon-link'
 )
-function openShipmentToggle() {
-  productShipment.classList.toggle('is-open')
+
+function showFullSection() {
+  const productSection = this.parentNode.parentNode
+  productSection.classList.add('is-open')
 }
-productSectionButton.forEach((button) => {
-  button.addEventListener('click', openShipmentToggle)
+productSectionHaederIconButton.forEach((button) => {
+  button.addEventListener('click', showFullSection)
 })
