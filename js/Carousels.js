@@ -1,37 +1,30 @@
-const productCarousel = tns({
+const productSlider = tns({
   container: '.product-carousel .slider-list',
+  items: 1,
   controls: false,
-  navContainer: '.product-carousel .thumbnail-list',
-  navAsThumbnails: true,
-  arrowKeys: true,
   autoplay: true,
   autoplayHoverPause: true,
   autoplayButtonOutput: false,
+  navContainer: '.product-carousel .thumbnail-list',
+  arrowKeys: true,
   mouseDrag: true,
   preventScrollOnTouch: true,
-  //   items: 3,
-  //   slideBy: 'page',
 })
 
 const userGallerySliderMobile = tns({
-  container: '.product-user-gallery.is-mobile .user-gallery-slider-list',
+  container: '.user-gallery-slider .slider-list',
   controls: false,
   gutter: 4,
-  mouseDrag: true,
-  arrowKeys: true,
-  navContainer: '.product-user-gallery.is-mobile .user-gallery-thumbnail-list',
   edgePadding: 16,
-  loop: false,
-})
-
-const userGallerySliderDesktop = tns({
-  container: '.product-user-gallery.is-desktop .user-gallery-slider-list',
-  controls: true,
-  controlsContainer: '.product-user-gallery.is-desktop .user-gallery-controls',
-  gutter: 6,
-  mouseDrag: true,
   arrowKeys: true,
-  navContainer: '.product-user-gallery.is-desktop .user-gallery-thumbnail-list',
-  edgePadding: 75,
+  mouseDrag: true,
   loop: false,
+
+  responsive: {
+    768: {
+      gutter: 6,
+      edgePadding: 75,
+      controls: true,
+    },
+  },
 })

@@ -53,7 +53,7 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-4">
-              <!-- ===== gnb left start ===== -->
+              <!-- ===== gnb left ===== -->
               <div class="gnb-wrapper">
                 <div class="gnb-left">
                   <!-- sidebar menu button -->
@@ -83,11 +83,10 @@
                     </ul>
                   </nav>
                 </div>
-                <!-- ===== gnb left end ===== -->
 
-                <!-- ===== gnb right start ===== -->
+                <!-- ===== gnb right ===== -->
                 <div class="gnb-right">
-                  <div class="gnb-search">
+                  <div class="gnb-search is-active">
                     <div class="input-group lg-only">
                       <i class="ic-search" aria-hidden></i>
                       <input
@@ -241,7 +240,6 @@
                     <i class="ic-chevron" aria-hidden></i>
                   </button>
                 </div>
-                <!-- ===== gnb right end ===== -->
               </div>
             </div>
           </div>
@@ -639,6 +637,143 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-4 col-lg-8">
+            <section class="product-section product-user-gallery">
+              <header class="product-section-header">
+                <h1 class="title">유저들의 스타일링샷</h1>
+                <strong class="badge" aria-label="461개">461</strong>
+                <button
+                  href="#"
+                  class="icon-link is-right"
+                  aira-labe="유저들의 스타일링샷 더보기"
+                >
+                  <i class="ic-chevron" aria-hidden></i>
+                </button>
+              </header>
+              <div class="product-section-content">
+                <div class="user-gallery" role="region">
+                  <div class="user-gallery-slider">
+                    <ol class="slider-list">
+                      <li class="slider-item">
+                        <div class="user-gallery-card">
+                          <figure class="user-gallery-card-image">
+                            <img
+                              src="./assets/images/img-review-01.jpg"
+                              alt=""
+                            />
+                            <figcaption class="visually-hidden">
+                              유저1 님의 스타일링샷
+                            </figcaption>
+                          </figure>
+                          <div class="user-gallery-card-detail">
+                            <a href="#" class="avatar-32">
+                              <img
+                                src="./assets/images/user-01.jpg"
+                                alt="user-profile1"
+                              />
+                            </a>
+                            <a href="#" class="user-name">유저1</a>
+                            <span class="order">1/461</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="slider-item">
+                        <div class="user-gallery-card">
+                          <figure class="user-gallery-card-image">
+                            <img
+                              src="./assets/images/img-review-02.jpg"
+                              alt=""
+                            />
+                            <figcaption class="visually-hidden">
+                              유저2 님의 스타일링샷
+                            </figcaption>
+                          </figure>
+                          <div class="user-gallery-card-detail">
+                            <a href="#" class="avatar-32">
+                              <img
+                                src="./assets/images/user-02.png"
+                                alt="user-profile2"
+                              />
+                            </a>
+                            <a href="#" class="user-name">유저2</a>
+                            <span class="order">2/461</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="slider-item">
+                        <div class="user-gallery-card">
+                          <figure class="user-gallery-card-image">
+                            <img
+                              src="./assets/images/img-review-03.jpg"
+                              alt=""
+                            />
+                            <figcaption class="visually-hidden">
+                              유저3 님의 스타일링샷
+                            </figcaption>
+                          </figure>
+                          <div class="user-gallery-card-detail">
+                            <a href="#" class="avatar-32">
+                              <img
+                                src="./assets/images/user-03.jpg"
+                                alt="user-profile3"
+                              />
+                            </a>
+                            <a href="#" class="user-name">유저3</a>
+                            <span class="order">3/461</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="slider-item">
+                        <div class="user-gallery-card">
+                          <figure class="user-gallery-card-image">
+                            <img
+                              src="./assets/images/img-review-04.jpg"
+                              alt=""
+                            />
+                            <figcaption class="visually-hidden">
+                              유저4 님의 스타일링샷
+                            </figcaption>
+                          </figure>
+                          <div class="user-gallery-card-detail">
+                            <a href="#" class="avatar-32">
+                              <img
+                                src="./assets/images/img-user-01.jpg"
+                                alt="user-profile4"
+                              />
+                            </a>
+                            <a href="#" class="user-name">유저4</a>
+                            <span class="order">4/461</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="slider-item">
+                        <div class="user-gallery-card">
+                          <figure class="user-gallery-card-image">
+                            <img
+                              src="./assets/images/img-review-05.jpg"
+                              alt=""
+                            />
+                            <figcaption class="visually-hidden">
+                              유저5 님의 스타일링샷
+                            </figcaption>
+                          </figure>
+                          <div class="user-gallery-card-detail">
+                            <a href="#" class="avatar-32">
+                              <img
+                                src="./assets/images/img-user-default.png"
+                                alt="user-profile5"
+                              />
+                            </a>
+                            <a href="#" class="user-name">유저5</a>
+                            <span class="order">5/461</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="user-gallery-thumbnail"></div>
+                </div>
+              </div>
+            </section>
             <div
               class="product-section-divider is-big sm-only"
               aria-hidden
@@ -2039,25 +2174,12 @@
     <div class="overlay" aria-hidden></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script>
-      var slider = tns({
-        container: '.product-carousel .slider-list',
-        items: 1,
-        controls: false,
-        autoplay: true,
-        autoplayHoverPause: true,
-        autoplayButtonOutput: false,
-        navContainer: '.product-carousel .thumbnail-list',
-        arrowKeys: true,
-        mouseDrag: true,
-        preventScrollOnTouch: true,
-      })
-    </script>
     <script src="./js/sidebar.js"></script>
     <script src="./js/sidebar-drawer.js"></script>
     <script src="./js/search-modal.js"></script>
     <script src="./js/section-header.js"></script>
     <script src="./js/order-cta.js"></script>
     <script src="./js/my-menu.js"></script>
+    <script src="./js/carousels.js"></script>
   </body>
 </html>
