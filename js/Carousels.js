@@ -12,8 +12,10 @@ const productSlider = tns({
 })
 
 const userGallerySliderMobile = tns({
-  container: '.user-gallery-slider .slider-list',
+  container: '.user-gallery .user-gallery-slider .slider-list',
   controls: false,
+  navContainer: '.user-gallery .user-gallery-thumbnail .thumbnail-list',
+  controlsContainer: '.user-gallery-controls',
   gutter: 4,
   edgePadding: 16,
   arrowKeys: true,
