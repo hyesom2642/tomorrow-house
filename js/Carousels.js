@@ -12,21 +12,27 @@ const productSlider = tns({
 })
 
 const userGallerySliderMobile = tns({
-  container: '.user-gallery .user-gallery-slider .slider-list',
+  container: '.row.sm-only .user-gallery .user-gallery-slider .slider-list',
   controls: false,
-  navContainer: '.user-gallery .user-gallery-thumbnail .thumbnail-list',
-  controlsContainer: '.user-gallery-controls',
+  navContainer:
+    '.row.sm-only .user-gallery .user-gallery-thumbnail .thumbnail-list',
   gutter: 4,
   edgePadding: 16,
   arrowKeys: true,
   mouseDrag: true,
   loop: false,
+})
 
-  responsive: {
-    768: {
-      gutter: 6,
-      edgePadding: 75,
-      controls: true,
-    },
-  },
+const userGallerySliderDesktop = tns({
+  container:
+    '.product-user-gallery.sm-hidden .user-gallery .user-gallery-slider .slider-list',
+  controls: true,
+  navContainer:
+    '.product-user-gallery.sm-hidden .user-gallery .user-gallery-thumbnail .thumbnail-list',
+  controlsContainer: '.product-user-gallery.sm-hidden .user-gallery-controls',
+  gutter: 6,
+  edgePadding: 75,
+  arrowKeys: true,
+  mouseDrag: true,
+  loop: false,
 })
