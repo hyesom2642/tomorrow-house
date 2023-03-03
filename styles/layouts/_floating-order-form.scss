@@ -4,42 +4,45 @@
 
   @include flexbox(start, start);
   flex-direction: column;
-  padding: 24px 0;
   position: sticky;
   top: $global-header-height;
+  padding: 24px 0;
   min-height: calc(100vh - #{$global-header-height + $global-footer-height-md});
   max-height: calc(100vh - #{$global-header-height});
 
-  &-select,
-  .order-summary,
-  .order-button-group {
+  > * {
     width: 100%;
-    flex-grow: 0;
+  }
+
+  .order-form-select,
+  .order-form-summary,
+  .order-form-button-group {
     flex-shrink: 0;
+    flex-grow: 0;
   }
 
-  .order-checkout {
+  .order-checkouts {
+    @include no-scrollbar;
+    overflow: scroll;
     flex-grow: 1;
-    overflow-y: auto;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
   }
-  .order-button-group {
-    button.bookmark-button {
+
+  .order-form-button-group {
+    button {
+      margin-right: 8px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .bookmark-button {
       width: 55px;
       height: 55px;
-      border-radius: 4px;
       border: 1px solid $border;
-      flex-grow: 0;
+      border-radius: 4px;
       flex-shrink: 0;
-      transition: background-color 300ms ease-in-out;
-
-      i {
-        font-size: 32px;
-        color: $primary;
-      }
+      transition: background 0.2s ease-in-out;
 
       &.is-active {
         i {
@@ -50,9 +53,11 @@
       &:hover {
         background-color: $background;
       }
-    }
-    button.btn-outlined {
-      margin-right: 8px;
+
+      i {
+        font-size: 32px;
+        color: $primary;
+      }
     }
   }
 }
