@@ -1,8 +1,7 @@
 const productSpec = document.querySelector('.product-section.product-spec')
-
-const wrapperButton = productSpec.querySelector('.button-wrapper')
+const openButton = productSpec.querySelector('.button-wrapper button')
 
 function openProductSpec() {
   productSpec.classList.add('is-open')
 }
-wrapperButton.addEventListener('click', openProductSpec)
+openButton.addEventListener('click', openProductSpec)
