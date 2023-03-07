@@ -1,116 +1,35 @@
 const productTab = document.querySelector('.product-tab')
-const productTabList = productTab.querySelector('.product-tab-list')
 const productTabItemButton = productTab.querySelectorAll(
-  '.product-tab-item Button'
+  '.product-tab-item button'
 )
-let currentTabClick = productTab.querySelector('.is-active')
-let disableUpdating = false
 
-const TOP_HEADER_DESKTOP = 80 + 50 + 54
+let currentActive = productTab.querySelector('.is-active')
+
+const TOP_HEADER_DESKTOP = 80 + 50 + 56
 const TOP_HEADER_MOBILE = 50 + 40 + 40
 
-function handleProductTab() {
+function productTabClickHandle() {
+  this.classList.add('is-active')
+
   const productTabItem = this.parentNode
-
-  if (currentTabClick !== productTabItem) {
-    disableUpdating = true
+  if (currentActive !== productTabItem) {
     productTabItem.classList.add('is-active')
-    currentTabClick.classList.remove('is-active')
-    currentTabClick = productTabItem
-
-    setTimeout(() => {
-      disableUpdating = false
-    }, 1000)
+    currentActive.classList.remove('is-active')
+    currentActive = productTabItem
   }
 }
 function scrollToPanel() {
   const tabPanelId = this.parentNode.getAttribute('aria-labelledby')
   const tabPanel = document.querySelector(`#${tabPanelId}`)
-  const scrollAmount =
-    tabPanel.getBoundingClientRect().top -
-    (window.innerWidth >= 768 ? TOP_HEADER_DESKTOP : TOP_HEADER_MOBILE)
 
-  window.scrollBy({
-    top: scrollAmount,
+  scrollBy({
+    top:
+      tabPanel.getBoundingClientRect().top -
+      (window.innerWidth >= 768 ? TOP_HEADER_DESKTOP : TOP_HEADER_MOBILE),
     behavior: 'smooth',
   })
 }
-
 productTabItemButton.forEach((button) => {
-  button.addEventListener('click', handleProductTab)
+  button.addEventListener('click', productTabClickHandle)
   button.addEventListener('click', scrollToPanel)
 })
-
-// 1. 각 element의 y축위치(document의 시작점에서 얼마나 떨어져있는지)
-// 2. 요소의 y축 위치 = window.scrollY + element.getBoundingClientRect().top
-const productTabPanelIdList = [
-  'product-spec',
-  'product-review',
-  'product-inquiry',
-  'product-shipment',
-  'product-recommendation',
-]
-const productTabPanelList = productTabPanelIdList.map((panelId) => {
-  const tabPanel = document.querySelector(`#${panelId}`)
-  return tabPanel
-})
-
-const productTabPanelPosition = {
-  // id : position
-}
-function findTabPanelPosition() {
-  productTabPanelList.forEach((panel) => {
-    const id = panel.getAttribute('id')
-    const position = window.scrollY + panel.getBoundingClientRect().top
-
-    productTabPanelPosition[id] = position
-  })
-
-  updateActiveTab()
-}
-function updateActiveTab() {
-  // 스크롤 위치에 따라서 activeTab 업데이트
-  // 1. 현재 얼마만큼 스크롤을 했는가 -> window.scrollY
-  // 2. 각 element의 y축 위치 -> productTabPanelPosition
-  if (disableUpdating) {
-    return
-  }
-  const scrolledAmount =
-    window.scrollY +
-    (window.innerWidth >= 768 ? TOP_HEADER_DESKTOP : TOP_HEADER_MOBILE)
-
-  let newActiveTab
-  if (scrolledAmount >= productTabPanelPosition['product-recommendation']) {
-    newActiveTab = productTabItemButton[4] // 추천버튼
-  } else if (scrolledAmount >= productTabPanelPosition['product-shipment']) {
-    newActiveTab = productTabItemButton[3] // 배송/환불 버튼
-  } else if (scrolledAmount >= productTabPanelPosition['product-inquiry']) {
-    newActiveTab = productTabItemButton[2] // 문의 버튼
-  } else if (scrolledAmount >= productTabPanelPosition['product-review']) {
-    newActiveTab = productTabItemButton[1] // 리뷰 버튼
-  } else {
-    newActiveTab = productTabItemButton[0] // 상품정보 버튼
-  }
-
-  // 페이지를 끝까지 스크롤 한 경우
-  const bodyHeight =
-    document.body.offsetHeight + (window.innerWidth < 1200 ? 56 : 0)
-  if (window.scrollY + window.innerHeight === bodyHeight) {
-    newActiveTab = productTabItemButton[4]
-  }
-
-  if (newActiveTab) {
-    newActiveTab = newActiveTab.parentNode
-
-    if (newActiveTab !== currentTabClick) {
-      newActiveTab.classList.add('is-active')
-      if (currentTabClick !== null) {
-        currentTabClick.classList.remove('is-active')
-      }
-      currentTabClick = newActiveTab
-    }
-  }
-}
-window.addEventListener('load', findTabPanelPosition) // load 됐을 때
-window.addEventListener('resize', findTabPanelPosition) // window의 사이즈가 바뀔 때
-window.addEventListener('scroll', updateActiveTab) // window가 스크롤 될 때
