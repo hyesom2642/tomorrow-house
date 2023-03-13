@@ -2,6 +2,8 @@ const gnbSearch = document.querySelector('.gnb-search')
 const gnbInput = gnbSearch.querySelector('input')
 const gnbSearchHistory = gnbSearch.querySelector('.search-history')
 const gnbSearchHistoryList = gnbSearchHistory.querySelector('ol')
+const gnbSearchHistoryItemDeleteButton =
+  gnbSearchHistoryList.querySelectorAll('.delete-button')
 
 const deleteAllButton = gnbSearchHistory.querySelector(
   '.search-history-header button'
@@ -32,8 +34,23 @@ function closeGnbSearch() {
 }
 gnbInput.addEventListener('focus', openGnbSearch)
 
-function deleteAllSearchHistoryItems() {
+function deleteAllButtonSearchHistoryItems() {
   gnbSearchHistoryList.innerHTML = ''
   closeGnbSearch()
 }
-deleteAllButton.addEventListener('click', deleteAllSearchHistoryItems)
+function deleteButtonSearchHistoryItem(e) {
+  // event 전파 X
+  e.stopPropagation()
+
+  // li 삭제
+  const gnbSearchHistoryItem = this.parentNode
+  gnbSearchHistoryList.removeChild(gnbSearchHistoryItem)
+
+  if (gnbSearchHistoryList.children.length === 0) {
+    closeGnbSearch()
+  }
+}
+deleteAllButton.addEventListener('click', deleteAllButtonSearchHistoryItems)
+gnbSearchHistoryItemDeleteButton.forEach((button) => {
+  button.addEventListener('click', deleteButtonSearchHistoryItem)
+})
